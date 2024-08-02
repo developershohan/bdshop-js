@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Demo styles -->
+  </head>
+
+  <body>
+    <!-- Swiper -->
+    <div class="hero_section">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="bg-accent bg-gradient-radial-hero w-full h-full">
+              <div class="container h-full">
+                <div class="grid  h-full grid-cols-12 justify-center align-middle">
+                  <div class=" col-span-6 lg:col-span-6 lg:col-start-2 text-start content-center">
+                    <img src="./public/img/samples/youtube.svg" alt="">
+                    <h1 class="text-slate-200 grid ">
+                      <span class=" relative white_shade" >
+                        <span class=" text-4xl hero_1_text
+                        ">Jack Parker’s</span>
+                      </span>
+                      <span class=" relative white_shade" >
+                        <span class=" text-4xl">UNBX VLOGS</span>
+                      </span>
+                    </h1>
+                    <p>Bringing you the best unboxing videos of the latest technology, games, and toys!</p>
+                    <button>Subscribe Now</button>
+                  </div>
+                  <div class="col-span-6 lg:col-span-5 content-center">
+                    <div class="slider1_img scale-90">
+                      <img
+                        src="./public/img/samples/hero-person.png"
+                        alt=""
+                        srcset="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="bg-gray-600 w-full h-full">
+              <div class="container h-full">
+                <div class="grid h-full grid-cols-12 justify-center align-middle">
+                  <div class=" col-span-6 lg:col-span-6 lg:col-start-2 text-start content-center">
+                    <h1 class="text-slate-200">Slide 1 asdf</h1>
+                  </div>
+                  <div class="col-span-6 lg:col-span-5 content-center">
+                    <div class="slider1_img scale-90">
+                      <img
+                        src="./public/img/samples/hero-person.png"
+                        alt=""
+                        srcset="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+        </div>
+        <!-- <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div> -->
+        <div
+          class="swiper-pagination custom_pagination absolute right-4 lg:right-10 top-1/2 !left-auto -translate-y-[calc(50%+40px)] !bottom-auto z-20 flex !w-4 lg:-translate-y-[calc(50%+70px)] flex-col gap-[10px]"></div>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
