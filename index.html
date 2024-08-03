@@ -21,6 +21,99 @@
   </head>
 
   <body>
+    <!-- Header Start -->
+
+    <div
+      class="flex header-wrapper justify-center -lg:mb-[100px] lg:h-[100px] h-[50px] -mb-[50px] bg-white z-100">
+      <div class="container flex justify-between items-center">
+        <!-- logo Start-->
+        <div class="logo z-20 w-[100px]">
+          <img src="./public/img/youtube-logo.png" alt="" />
+        </div>
+        <!-- logo End-->
+        <!-- nav Start-->
+        <div class="nav z-20 hidden lg:flex">
+          <ul class="flex gap-10 relative">
+            <li class="active:underline hover:underline">
+              <a href="home" class="text-white">Home</a>
+            </li>
+            <li>
+              <a href="home" class="text-white"
+                >Home
+                <svg role="img" class="h-2 w-2 rotate-90 fill-white">
+                  <use xlink:href="assets/img/yt1/sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+              <ul
+                class="absolute top-8 bg-white pl-6 py-8 pr-40 flex flex-col gap-5">
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="home" class="text-white">Home</a>
+            </li>
+            <li>
+              <a href="home" class="text-white">Home</a>
+            </li>
+            <li>
+              <a href="home" class="text-white">Home</a>
+            </li>
+            <li>
+              <a href="home" class="text-white">Home</a>
+            </li>
+          </ul>
+        </div>
+        <!-- nav End-->
+        <div
+          class="mobile_nav bg-white w-full h-full bottom-0 top-14 pt-10 px-8 absolute z-20">
+          <ul class="flex flex-col gap-10 relative">
+            <li class="active:underline hover:underline">
+              <a href="home" class="text-black">Home</a>
+            </li>
+            <li class=" relative">
+              <a href="home" class="text-black"
+                >Home
+                <svg role="img" class="h-2 w-2 rotate-90 fill-black">
+                  <use xlink:href="assets/img/yt1/sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+              <ul
+                class=" top-8 bg-black pl-6 py-8 pr-40 flex flex-col gap-5">
+                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="home" class="text-black">about</a>
+            </li>
+            <li>
+              <a href="home" class="text-black">Contact</a>
+            </li>
+            <li>
+              <a href="home" class="text-black">Home</a>
+            </li>
+            <li>
+              <a href="home" class="text-black">Home</a>
+            </li>
+          </ul>
+        </div>
+        <!-- header control Start -->
+        <!-- header control End -->
+
+        <!-- Mobile Start-->
+
+        <!-- Mobile End-->
+      </div>
+    </div>
+
+    <!-- Header End -->
     <!-- Swiper -->
     <div class="hero_section lg:h-[800px] relative z-10">
       <div class="swiper mySwiper">
@@ -33,12 +126,12 @@
                   class="grid h-full w-[1180px] relative grid-cols-12 gap-y-7 justify-center align-middle">
                   <div
                     class="col-span-full h-[800px] lg:col-start-2 grid content-center gap-2 lg:text-left text-center lg:justify-start justify-center w-full">
-                    <div class="hero_img lg:justify-start w-full flex justify-center">
-
+                    <div
+                      class="hero_img lg:justify-start w-full flex justify-center">
                       <img
-                      src="./public/img/samples/youtube.svg"
-                      class="w-[150px] pb-5"
-                      alt="" />
+                        src="./public/img/samples/youtube.svg"
+                        class="w-[150px] pb-5"
+                        alt="" />
                     </div>
                     <h3
                       class="text-white grid lg:justify-start justify-center relative overflow-hidden lg:w-fit w-full">
@@ -51,7 +144,7 @@
                     <h3
                       class="text-white grid lg:justify-start justify-center relative overflow-hidden lg:w-fit w-full">
                       <span
-                        class="xl:text-8xl lg:text-6xl text-4xl relative inline-block overflow-hidden  hero_1_text w-fit tracking-tight font-extrabold">
+                        class="xl:text-8xl lg:text-6xl text-4xl relative inline-block overflow-hidden hero_1_text w-fit tracking-tight font-extrabold">
                         UNBX VLOGS
                         <span class="white_shade"></span>
                       </span>
@@ -67,7 +160,8 @@
                       <span class="white_shade_btn -z-10"></span>
                     </button>
                   </div>
-                  <div class="col-span-full max-lg:hidden flex justify-center content-end h-[800px]">
+                  <div
+                    class="col-span-full max-lg:hidden flex justify-center content-end h-[800px]">
                     <div
                       class="slider1_img lg:scale-90 duration-700 lg:absolute lg:bottom-0 lg:right-0 -mb-12 opacity-0 transition-all group-[.swiper-slide-active:not(.vv-slide-played)]:scale-100 group-[.vv-slide-played]:scale-100 group-[.vv-slide-played]:opacity-100 group-[.swiper-slide-active:not(.vv-slide-played)]:opacity-100">
                       <img
