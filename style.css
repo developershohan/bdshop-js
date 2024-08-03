@@ -2,19 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  position: relative;
-  height: 100%;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background: #eee;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
 }
 
 .bg-gradient-radial-hero {
@@ -32,10 +29,6 @@ body {
 .bg-accent {
   --tw-bg-opacity: 1;
   background-color: rgb(255 61 84 / var(--tw-bg-opacity));
-}
-
-.hero_section {
-  height: 100vh;
 }
 
 .swiper {
@@ -106,54 +99,14 @@ body {
   object-fit: contain;
 }
 
-.white_shade::after {
-  content: "";
+.white_shade, .white_shade_btn {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
-  width: 300%;
+  right: 0;
+  background: #fff;
+  width: 100%;
+  height: 100%;
   transform: translateX(-100%);
-  background-color: white;
-  transition: transform 1.5s linear, opacity 0.5s ease-in-out;
-  pointer-events: none;
-  display: block;
-}
-
-/* When the slide is active and has not yet played, move the background */
-.swiper-slide-active:not(.slide-played) .white_shade::after {
-  transform: translateX(100%);
-}
-
-/* When the slide has played, hide the background */
-.slide-played .white_shade::after {
-  opacity: 0;
-}
-
-/* Text inside the container with opacity transition */
-.hero_1_text {
-  font-size: 2rem; /* Adjust size as needed */
-  line-height: 1;
-  letter-spacing: -0.05em;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out 0.4s; /* delay the opacity change slightly */
-}
-
-/* Make the text visible when the slide is active or has played */
-.swiper-slide-active:not(.slide-played) .hero_1_text,
-.slide-played .hero_1_text {
   opacity: 1;
-}
-
-/* Larger text on larger screens */
-@media (min-width: 1024px) {
-  .hero_1_text {
-    font-size: 4rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero_1_text {
-    font-size: 5rem;
-  }
 }

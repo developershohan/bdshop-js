@@ -19,26 +19,34 @@
 
   <body>
     <!-- Swiper -->
-    <div class="hero_section">
+    <div class="hero_section h-[800px] relative z-10">
       <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper ">
           <div class="swiper-slide">
-            <div class="bg-accent bg-gradient-radial-hero w-full h-full">
+            <div class="bg-accent bg-gradient-radial-hero w-full h-full flex justify-center">
               <div class="container h-full">
-                <div class="grid  h-full grid-cols-12 justify-center align-middle">
-                  <div class=" col-span-6 lg:col-span-6 lg:col-start-2 text-start content-center">
-                    <img src="./public/img/samples/youtube.svg" alt="">
-                    <h1 class="text-slate-200 grid ">
-                      <span class=" relative white_shade" >
-                        <span class=" text-4xl hero_1_text
-                        ">Jack Parker’s</span>
+                <div
+                  class="grid h-full grid-cols-12 justify-center align-middle">
+                  <div
+                    class="col-span-6 h-[800px] lg:col-span-6 lg:col-start-2 grid content-center gap-2  text-left">
+                    <img src="./public/img/samples/youtube.svg" alt="" />
+                    <h1 class="text-white grid justify-start">
+                      <span class="text-4xl relative inline-block overflow-hidden hero_1_text"
+                        >Jack Parker’s
+                        <span class="white_shade"></span>
                       </span>
-                      <span class=" relative white_shade" >
-                        <span class=" text-4xl">UNBX VLOGS</span>
+                      <span class="text-4xl relative inline-block overflow-hidden hero_1_text"
+                        >UNBX VLOGS
+                        <span class="white_shade"></span>
                       </span>
                     </h1>
-                    <p>Bringing you the best unboxing videos of the latest technology, games, and toys!</p>
-                    <button>Subscribe Now</button>
+                    <p>
+                      Bringing you the best unboxing videos of the latest
+                      technology, games, and toys!
+                    </p>
+                    <button class="btn w-fit px-6 text-white py-2 border-2 relative overflow-hidden hover:text-black z-10">Subscribe Now
+                      <span class="white_shade_btn -z-10 "></span>
+                    </button>
                   </div>
                   <div class="col-span-6 lg:col-span-5 content-center">
                     <div class="slider1_img scale-90">
@@ -55,8 +63,10 @@
           <div class="swiper-slide">
             <div class="bg-gray-600 w-full h-full">
               <div class="container h-full">
-                <div class="grid h-full grid-cols-12 justify-center align-middle">
-                  <div class=" col-span-6 lg:col-span-6 lg:col-start-2 text-start content-center">
+                <div
+                  class="grid h-full grid-cols-12 justify-center align-middle">
+                  <div
+                    class="col-span-6 lg:col-span-6 lg:col-start-2 text-start content-center">
                     <h1 class="text-slate-200">Slide 1 asdf</h1>
                   </div>
                   <div class="col-span-6 lg:col-span-5 content-center">
@@ -83,6 +93,8 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <script type="module" src="main.js"></script>
   </body>

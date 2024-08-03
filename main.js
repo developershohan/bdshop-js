@@ -41,3 +41,42 @@ var swiper = new Swiper(".mySwiper", {
     }
   },
 });
+
+//gsap
+document.addEventListener('DOMContentLoaded', () => {
+  const tl = gsap.timeline();
+
+  tl.to('.white_shade', {
+      duration: 1,
+      x: '0%', 
+      ease: 'power4.in',
+      stagger: 0.2
+  }).to('.white_shade', {
+      duration: 1,
+      x: '100%', 
+      ease: 'power4.out',
+      stagger: 0.2
+  });
+});
+//gsap
+
+const btn = document.querySelector(".btn")
+btn.addEventListener('mouseenter', () => {
+  gsap.to('.white_shade_btn', {
+      duration: 0.2,
+      x: '0%',
+      ease: 'power4.in',
+  });
+});
+
+btn.addEventListener('mouseleave', () => {
+  gsap.to('.white_shade_btn', {
+      duration: 0.2,
+      x: '100%',
+      ease: 'power4.in',
+      onComplete: () => {
+          // Reset the transform to ensure it starts from the correct position next time
+          gsap.set('.white_shade_btn', { x: '-100%' });
+      }
+  });
+});
