@@ -11,6 +11,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
 
@@ -19,37 +22,54 @@
 
   <body>
     <!-- Swiper -->
-    <div class="hero_section h-[800px] relative z-10">
+    <div class="hero_section lg:h-[800px] relative z-10">
       <div class="swiper mySwiper">
-        <div class="swiper-wrapper ">
-          <div class="swiper-slide">
-            <div class="bg-accent bg-gradient-radial-hero w-full h-full flex justify-center">
-              <div class="container h-full">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide group">
+            <div
+              class="bg-accent lg:bg-gradient-radial-hero w-full h-full flex justify-center align-middle">
+              <div class="container h-full flex justify-center">
                 <div
-                  class="grid h-full grid-cols-12 justify-center align-middle">
+                  class="grid h-full w-[1180px] relative grid-cols-12 gap-y-7 justify-center align-middle">
                   <div
-                    class="col-span-6 h-[800px] lg:col-span-6 lg:col-start-2 grid content-center gap-2  text-left">
-                    <img src="./public/img/samples/youtube.svg" alt="" />
-                    <h1 class="text-white grid justify-start">
-                      <span class="text-4xl relative inline-block overflow-hidden hero_1_text"
+                    class="col-span-full h-[800px] lg:col-start-2 grid content-center gap-2 lg:text-left text-center lg:justify-start justify-center w-full">
+                    <div class="hero_img lg:justify-start w-full flex justify-center">
+
+                      <img
+                      src="./public/img/samples/youtube.svg"
+                      class="w-[150px] pb-5"
+                      alt="" />
+                    </div>
+                    <h3
+                      class="text-white grid lg:justify-start justify-center relative overflow-hidden lg:w-fit w-full">
+                      <span
+                        class="xl:text-6xl lg:text-4xl text-2xl relative inline-block overflow-hidden hero_1_text w-fit tracking-tight font-extrabold"
                         >Jack Parker’s
+                      </span>
+                      <span class="white_shade w-fit"></span>
+                    </h3>
+                    <h3
+                      class="text-white grid lg:justify-start justify-center relative overflow-hidden lg:w-fit w-full">
+                      <span
+                        class="xl:text-8xl lg:text-6xl text-4xl relative inline-block overflow-hidden  hero_1_text w-fit tracking-tight font-extrabold">
+                        UNBX VLOGS
                         <span class="white_shade"></span>
                       </span>
-                      <span class="text-4xl relative inline-block overflow-hidden hero_1_text"
-                        >UNBX VLOGS
-                        <span class="white_shade"></span>
-                      </span>
-                    </h1>
-                    <p>
+                    </h3>
+
+                    <p class="w-[450px] font-normal text-white leading-8">
                       Bringing you the best unboxing videos of the latest
                       technology, games, and toys!
                     </p>
-                    <button class="btn w-fit px-6 text-white py-2 border-2 relative overflow-hidden hover:text-black z-10">Subscribe Now
-                      <span class="white_shade_btn -z-10 "></span>
+                    <button
+                      class="btn lg:w-fit px-6 text-white py-2 mt-5 border-2 relative overflow-hidden hover:text-black z-10">
+                      Subscribe Now
+                      <span class="white_shade_btn -z-10"></span>
                     </button>
                   </div>
-                  <div class="col-span-6 lg:col-span-5 content-center">
-                    <div class="slider1_img scale-90">
+                  <div class="col-span-full max-lg:hidden flex justify-center content-end h-[800px]">
+                    <div
+                      class="slider1_img lg:scale-90 duration-700 lg:absolute lg:bottom-0 lg:right-0 -mb-12 opacity-0 transition-all group-[.swiper-slide-active:not(.vv-slide-played)]:scale-100 group-[.vv-slide-played]:scale-100 group-[.vv-slide-played]:opacity-100 group-[.swiper-slide-active:not(.vv-slide-played)]:opacity-100">
                       <img
                         src="./public/img/samples/hero-person.png"
                         alt=""

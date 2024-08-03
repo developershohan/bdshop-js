@@ -42,7 +42,6 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-//gsap
 document.addEventListener('DOMContentLoaded', () => {
   const tl = gsap.timeline();
 
@@ -50,12 +49,27 @@ document.addEventListener('DOMContentLoaded', () => {
       duration: 1,
       x: '0%', 
       ease: 'power4.in',
+      opacity:1,
+      onStart: () => {
+          gsap.to('.hero_1_text', { opacity: 0 });
+      },
+      onComplete: () => {
+
+          gsap.to('.hero_1_text', {
+              opacity: 1,
+              ease: 'ease-in-out',
+          });
+      },
       stagger: 0.2
   }).to('.white_shade', {
       duration: 1,
       x: '100%', 
       ease: 'power4.out',
-      stagger: 0.2
+
+      onStart: () => {
+          gsap.to('.hero_1_text', { opacity: 1, duration: 0.1 });
+      },
+      stagger: 0.2 
   });
 });
 //gsap
