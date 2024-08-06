@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,11 +14,29 @@ body {
   font-size: 14px;
 }
 .lg\:bg-gradient-radial-hero {
-  background-image: radial-gradient(circle at 70% 50%, #fff9c3 11%, transparent 41%), radial-gradient(circle at 68% 50%, rgba(255, 250, 195, .1) 13%, transparent 52%);
+  background-image: radial-gradient(
+      circle at 70% 50%,
+      #fff9c3 11%,
+      transparent 41%
+    ),
+    radial-gradient(
+      circle at 68% 50%,
+      rgba(255, 250, 195, 0.1) 13%,
+      transparent 52%
+    );
 }
 
 .bg-gradient-radial-hero {
-  background-image: radial-gradient(circle at 70% 50%, #fff9c3 11%, transparent 41%), radial-gradient(circle at 68% 50%, rgba(255, 250, 195, .1) 13%, transparent 52%);
+  background-image: radial-gradient(
+      circle at 70% 50%,
+      #fff9c3 11%,
+      transparent 41%
+    ),
+    radial-gradient(
+      circle at 68% 50%,
+      rgba(255, 250, 195, 0.1) 13%,
+      transparent 52%
+    );
 }
 .bg-accent {
   --tw-bg-opacity: 1;
@@ -93,7 +111,8 @@ body {
   object-fit: contain;
 }
 
-.white_shade,.white_shade_btn {
+.white_shade,
+.white_shade_btn {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -101,9 +120,24 @@ body {
   width: 100%;
   background-color: white;
   transform: translateX(-100%);
-  opacity: 1; 
+  opacity: 1;
 }
 .hero_1_text {
   opacity: 0;
   transition: opacity 0.1s ease-in-out;
+}
+
+/* mobile menu */
+
+.mobile_nav {
+  transform: translateX(1000px);
+}
+
+.close_button i,
+.open_button i {
+  font-size: 18px;
+  color: #fff;
+}
+.dropdown__item:hover .dropdown_submenu{
+  display: block
 }

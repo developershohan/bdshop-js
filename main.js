@@ -94,3 +94,23 @@ btn.addEventListener('mouseleave', () => {
       }
   });
 });
+
+// hamburger animation
+
+const open_btn = document.querySelector('.open_button')
+const close_button = document.querySelector('.close_button')
+
+open_btn.addEventListener('click', ()=>{
+  gsap.to('.mobile_nav',{
+    x:'0%'
+  })
+  open_btn.style.display = "none"
+  close_button.style.display = "flex"
+})
+close_button.addEventListener('click', ()=>{
+  gsap.to('.mobile_nav',{
+    x:'100%'
+  })
+  open_btn.style.display = "flex"
+  close_button.style.display = "none"
+})

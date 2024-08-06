@@ -14,6 +14,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css" />
 
@@ -68,47 +69,61 @@
           </ul>
         </div>
         <!-- nav End-->
- 
+
         <!-- header control Start -->
+         <div class="header_control z-20">
+
+           <div class="theme_mode_toggle"></div>
+           <div class="mini_account"></div>
+           <div class="add_to_cart"></div>
+           <div class="hamburger flex lg:hidden">
+            <div class="open_button">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="close_button hidden">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+           </div>
+
+          </div>
         <!-- header control End -->
 
         <!-- Mobile Start-->
         <div
-        class="visible lg:hidden mobile_nav bg-white w-full h-full bottom-0 top-14 pt-10 px-8 absolute z-20">
-        <ul class="flex flex-col gap-10 relative">
-          <li class="active:underline hover:underline">
-            <a href="home" class="text-black">Home</a>
-          </li>
-          <li class=" relative">
-            <a href="home" class="text-black"
-              >Home
-              <svg role="img" class="h-2 w-2 rotate-90 fill-black">
-                <use xlink:href="assets/img/yt1/sprite.svg#arrow-right"></use>
-              </svg>
-            </a>
-            <ul
-              class=" top-8 bg-black pl-6 py-8 pr-40 flex flex-col gap-5">
-              <li><a href="home" class="text-white">home</a></li>
-              <li><a href="home" class="text-white">home</a></li>
-              <li><a href="home" class="text-white">home</a></li>
-              <li><a href="home" class="text-white">home</a></li>
-              <li><a href="home" class="text-white">home</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="home" class="text-black">about</a>
-          </li>
-          <li>
-            <a href="home" class="text-black">Contact</a>
-          </li>
-          <li>
-            <a href="home" class="text-black">Home</a>
-          </li>
-          <li>
-            <a href="home" class="text-black">Home</a>
-          </li>
-        </ul>
-      </div>
+          class="visible lg:hidden mobile_nav bg-white w-full h-full bottom-0 top-14 pt-10 px-8 absolute left-0 right-0 z-20">
+          <ul class="flex flex-col gap-10 relative">
+            <li class="active:underline hover:underline">
+              <a href="home" class="text-black">Home</a>
+            </li>
+            <li class="relative dropdown__item">
+              <a href="home" class="text-black"
+                >Home
+                <svg role="img" class="h-2 w-2 rotate-90 fill-black z-20">
+                  <use xlink:href="assets/img/yt1/sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+              <ul class="dropdown_submenu hidden top-8 bg-black pl-6 py-8 pr-40 flex flex-col gap-5">
+                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="home" class="text-black">about</a>
+            </li>
+            <li>
+              <a href="home" class="text-black">Contact</a>
+            </li>
+            <li>
+              <a href="home" class="text-black">Home</a>
+            </li>
+            <li>
+              <a href="home" class="text-black">Home</a>
+            </li>
+          </ul>
+        </div>
         <!-- Mobile End-->
       </div>
     </div>
