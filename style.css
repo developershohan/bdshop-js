@@ -12,6 +12,7 @@ body {
   background: #eee;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
+  overflow-x: hidden;
 }
 .lg\:bg-gradient-radial-hero {
   background-image: radial-gradient(
@@ -130,7 +131,8 @@ body {
 /* mobile menu */
 
 .mobile_nav {
-  transform: translateX(1000px);
+
+  transform: translateX(100%);
 }
 
 .close_button i,

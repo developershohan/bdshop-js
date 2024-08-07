@@ -1,5 +1,7 @@
 import "./style.css";
 
+
+// hero slider
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
@@ -40,6 +42,38 @@ var swiper = new Swiper(".mySwiper", {
       currentSlide.classList.add('slide-played');
     }
   },
+});
+
+
+// info Slider
+var infoswiper = new Swiper(".infoSwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  grabCursor: true,
+
+  breakpoints: {
+    576: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 5,
+    },
+    992: {
+      slidesPerView: 4,
+    },
+    1210: {
+      slidesPerView: 7,
+    },
+  },
+  // autoplay: {
+  //   delay: 1000,
+  //   disableOnInteraction: false,
+  // },
+  navigation: {
+    nextEl: ".info-swiper-button-next",
+    prevEl: ".info-swiper-button-prev",
+  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -98,11 +132,11 @@ btn.addEventListener('mouseleave', () => {
 // hamburger animation
 
 const open_btn = document.querySelector('.open_button')
-const close_button = document.querySelector('.close_button')
+const close_button = document.querySelector('.close_button') 
 
 open_btn.addEventListener('click', ()=>{
   gsap.to('.mobile_nav',{
-    x:'0%'
+    x:'0%',
   })
   open_btn.style.display = "none"
   close_button.style.display = "flex"
@@ -113,4 +147,6 @@ close_button.addEventListener('click', ()=>{
   })
   open_btn.style.display = "flex"
   close_button.style.display = "none"
+
+
 })
