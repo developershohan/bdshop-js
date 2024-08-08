@@ -142,17 +142,3 @@ body {
 .dropdown__item:hover .dropdown_submenu {
   display: block;
 }
-
-.info_section .swiper-button-next,
-.info_section .swiper-button-prev {
-  left: 0;
-  top: 20px;
-  background: #000;
-  z-index: 100000;
-  padding: 30px;
-  width: 10px;
-}
-.info_section .swiper-button-next {
-  content: 'next';
-  left: 60px;
-}
