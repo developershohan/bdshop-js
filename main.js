@@ -31,10 +31,10 @@ var swiper = new Swiper(".mySwiper", {
   //   delay: 1000,
   //   disableOnInteraction: false,
   // },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  // navigation: {
+  //   nextEl: ".swiper-button-next",
+  //   prevEl: ".swiper-button-prev",
+  // },
   on: {
     slideChange: function () {
       const currentIndex = this.realIndex;
@@ -57,13 +57,13 @@ var infoswiper = new Swiper(".infoSwiper", {
       slidesPerView: 2,
     },
     768: {
-      slidesPerView: 5,
+      slidesPerView: 2,
     },
     992: {
-      slidesPerView: 4,
+      slidesPerView: 3,
     },
     1210: {
-      slidesPerView: 7,
+      slidesPerView: 4,
     },
   },
   // autoplay: {
@@ -71,8 +71,8 @@ var infoswiper = new Swiper(".infoSwiper", {
   //   disableOnInteraction: false,
   // },
   navigation: {
-    nextEl: ".info-swiper-button-next",
-    prevEl: ".info-swiper-button-prev",
+    nextEl: ".js-vv-videos-featured-swiper-btn-next",
+    prevEl: ".js-vv-videos-featured-swiper-btn-prev",
   }
 });
 
