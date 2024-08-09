@@ -12,7 +12,7 @@ body {
   background: #eee;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .lg\:bg-gradient-radial-hero {
   background-image: radial-gradient(
@@ -54,6 +54,14 @@ body {
   text-align: center;
   font-size: 18px;
   background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new_video_left_side .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,4 +149,74 @@ body {
 }
 .dropdown__item:hover .dropdown_submenu {
   display: block;
+}
+
+
+/* new video section */
+.animate-ring {
+  -webkit-animation: ring 4s ease infinite;
+          animation: ring 4s ease infinite;
+}
+
+.reminder_icon:hover svg{
+  -webkit-animation: ring 4s ease infinite;
+  animation: ring 4s ease infinite;
+}
+@keyframes ring {
+
+  0% {
+    transform: rotate(-15deg);
+  }
+
+  2% {
+    transform: rotate(15deg);
+  }
+
+  4% {
+    transform: rotate(-18deg);
+  }
+
+  6% {
+    transform: rotate(18deg);
+  }
+
+  8% {
+    transform: rotate(-22deg);
+  }
+
+  10% {
+    transform: rotate(22deg);
+  }
+
+  12% {
+    transform: rotate(-18deg);
+  }
+
+  14% {
+    transform: rotate(18deg);
+  }
+
+  16% {
+    transform: rotate(-12deg);
+  }
+
+  18% {
+    transform: rotate(12deg);
+  }
+
+  20% {
+    transform: rotate(0deg);
+  }
+}
+.js-vv-pagination-bullet{
+  border: 1px solid #000;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-width: 2px;
+  border-radius: 50%;
+  
+}
+
+.js-vv-pagination-bullet-active{
+  border-color: red;
 }

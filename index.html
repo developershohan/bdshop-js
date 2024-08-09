@@ -41,14 +41,14 @@
               <a href="home" class="text-white">Home</a>
             </li>
             <li>
-              <a href="home" class="text-white"
+              <a href="./shop.html" class="text-white"
                 >Home
                 <svg role="img" class="h-2 w-2 rotate-90 fill-white">
-                  <use xlink:href="assets/img/yt1/sprite.svg#arrow-right"></use>
+                  <use xlink:href="./public/img/sprite.svg#arrow-right"></use>
                 </svg>
               </a>
               <ul
-                class="absolute top-8 bg-white pl-6 py-8 pr-40 flex flex-col gap-5">
+                class="absolute hidden top-8 bg-white pl-6 py-8 pr-40 flex flex-col gap-5">
                 <li><a href="home">home</a></li>
                 <li><a href="home">home</a></li>
                 <li><a href="home">home</a></li>
@@ -57,7 +57,7 @@
               </ul>
             </li>
             <li>
-              <a href="home" class="text-white">Home</a>
+              <a href="./shop.html" class="text-white">Shop</a>
             </li>
             <li>
               <a href="home" class="text-white">Home</a>
@@ -224,74 +224,232 @@
 
     <!-- Hero Section End -->
     <!-- info Section Start-->
-    <div class="info_section  flex justify-end -mt-40">
+    <div class="info_section flex justify-end -mt-40">
       <div class="container relative z-10 pt-10 pl-20 bg-white">
-
         <div class="swiper infoSwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide w-[350px] h-[400px]  group">
-              <div
-                class=" w-full h-full flex justify-center align-middle">
-                
+            <div class="swiper-slide w-[350px] h-[400px] group">
+              <div class="w-full h-full flex justify-center align-middle">
                 <div class="info-card">
-                  <div class="info_card_img relative bg-black">
-                    <img src="./public/img/samples/info-slide-1.png" alt="">
-                    
-                    <div class=" absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[30px] w-[30px] flex justify-center align-middle text-center content-center ">
-                      <svg class="h-[15px] w-[15px] text-white bg-black" fill="currentColor">
+                  <div class="info_card_img relative">
+                    <img src="./public/img/samples/info-slide-1.png" alt="" />
+
+                    <div
+                      class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
+                      <svg
+                        class="h-[15px] w-[15px] text-white"
+                        fill="currentColor">
                         <use xlink:href="./public/img/sprite.svg#play"></use>
                       </svg>
                     </div>
+                  </div>
+                  <div class="info_details flex flex-col gap-2">
+                    <h3 class="info_title text-start font-semibold">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Maiores rerum
+                    </h3>
+                    <p class="text-start">
+                      <span>231k views</span> <span>-</span>
+                      <span>8 hours ago</span>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
             <div class="swiper-slide w-[350px] h-[400px] group">
-              <div
-                class="bg-accent w-full h-full flex justify-center align-middle">
-                <h1>slider2</h1>
+              <div class="w-full h-full flex justify-center align-middle">
+                <div class="info-card">
+                  <div class="info_card_img relative">
+                    <img src="./public/img/samples/info-slide-1.png" alt="" />
+
+                    <div
+                      class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
+                      <svg
+                        class="h-[15px] w-[15px] text-white"
+                        fill="currentColor">
+                        <use xlink:href="./public/img/sprite.svg#play"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="info_details flex flex-col gap-2">
+                    <h3 class="info_title text-start font-semibold">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Maiores rerum
+                    </h3>
+                    <p class="text-start">
+                      <span>231k views</span> <span>-</span>
+                      <span>8 hours ago</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-slide w-[350px] h-[400px] group">
-              <div
-                class="bg-accent w-full h-full flex justify-center align-middle">
-                <h1>slider3</h1>
+              <div class="w-full h-full flex justify-center align-middle">
+                <div class="info-card">
+                  <div class="info_card_img relative">
+                    <img src="./public/img/samples/info-slide-1.png" alt="" />
+
+                    <div
+                      class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
+                      <svg
+                        class="h-[15px] w-[15px] text-white"
+                        fill="currentColor">
+                        <use xlink:href="./public/img/sprite.svg#play"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="info_details flex flex-col gap-2">
+                    <h3 class="info_title text-start font-semibold">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Maiores rerum
+                    </h3>
+                    <p class="text-start">
+                      <span>231k views</span> <span>-</span>
+                      <span>8 hours ago</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-slide w-[350px] h-[400px] group">
-              <div
-                class="bg-accent w-full h-full flex justify-center align-middle">
-                <h1>slider4</h1>
+              <div class="w-full h-full flex justify-center align-middle">
+                <div class="info-card">
+                  <div class="info_card_img relative">
+                    <img src="./public/img/samples/info-slide-1.png" alt="" />
+
+                    <div
+                      class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
+                      <svg
+                        class="h-[15px] w-[15px] text-white"
+                        fill="currentColor">
+                        <use xlink:href="./public/img/sprite.svg#play"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="info_details flex flex-col gap-2">
+                    <h3 class="info_title text-start font-semibold">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Maiores rerum
+                    </h3>
+                    <p class="text-start">
+                      <span>231k views</span> <span>-</span>
+                      <span>8 hours ago</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-slide w-[350px] h-[400px] group">
-              <div
-                class="bg-accent w-full h-full flex justify-center align-middle">
-                <h1>slider5</h1>
+              <div class="w-full h-full flex justify-center align-middle">
+                <div class="info-card">
+                  <div class="info_card_img relative">
+                    <img src="./public/img/samples/info-slide-1.png" alt="" />
+
+                    <div
+                      class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
+                      <svg
+                        class="h-[15px] w-[15px] text-white"
+                        fill="currentColor">
+                        <use xlink:href="./public/img/sprite.svg#play"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="info_details flex flex-col gap-2">
+                    <h3 class="info_title text-start font-semibold">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Maiores rerum
+                    </h3>
+                    <p class="text-start">
+                      <span>231k views</span> <span>-</span>
+                      <span>8 hours ago</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-slide w-[350px] h-[400px] group">
-              <div
-                class="bg-accent w-full h-full flex justify-center align-middle">
-                <h1>slider6</h1>
+              <div class="w-full h-full flex justify-center align-middle">
+                <div class="info-card">
+                  <div class="info_card_img relative">
+                    <img src="./public/img/samples/info-slide-1.png" alt="" />
+
+                    <div
+                      class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
+                      <svg
+                        class="h-[15px] w-[15px] text-white"
+                        fill="currentColor">
+                        <use xlink:href="./public/img/sprite.svg#play"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="info_details flex flex-col gap-2">
+                    <h3 class="info_title text-start font-semibold">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Maiores rerum
+                    </h3>
+                    <p class="text-start">
+                      <span>231k views</span> <span>-</span>
+                      <span>8 hours ago</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-slide w-[350px] h-[400px] group">
-              <div
-                class="bg-accent w-full h-full flex justify-center align-middle">
-                <h1>slider7</h1>
+              <div class="w-full h-full flex justify-center align-middle">
+                <div class="info-card">
+                  <div class="info_card_img relative">
+                    <img src="./public/img/samples/info-slide-1.png" alt="" />
+
+                    <div
+                      class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
+                      <svg
+                        class="h-[15px] w-[15px] text-white"
+                        fill="currentColor">
+                        <use xlink:href="./public/img/sprite.svg#play"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="info_details flex flex-col gap-2">
+                    <h3 class="info_title text-start font-semibold">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Maiores rerum
+                    </h3>
+                    <p class="text-start">
+                      <span>231k views</span> <span>-</span>
+                      <span>8 hours ago</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="swiper-slide w-[350px] h-[400px] group">
-              <div
-                class="bg-accent w-full h-full flex justify-center align-middle">
-                <h1>slider8</h1>
-              </div>
-            </div>
-            <div class="swiper-slide w-[350px] h-[400px] group">
-              <div
-                class="bg-accent w-full h-full flex justify-center align-middle">
-                <h1>slider9</h1>
+              <div class="w-full h-full flex justify-center align-middle">
+                <div class="info-card">
+                  <div class="info_card_img relative">
+                    <img src="./public/img/samples/info-slide-1.png" alt="" />
+
+                    <div
+                      class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
+                      <svg
+                        class="h-[15px] w-[15px] text-white"
+                        fill="currentColor">
+                        <use xlink:href="./public/img/sprite.svg#play"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="info_details flex flex-col gap-2">
+                    <h3 class="info_title text-start font-semibold">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Maiores rerum
+                    </h3>
+                    <p class="text-start">
+                      <span>231k views</span> <span>-</span>
+                      <span>8 hours ago</span>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -299,12 +457,14 @@
         <div class="absolute md:-top-2 md:-left-2 top-0 left-0">
           <div class="flex flex-wrap items-center justify-between">
             <div class="flex">
-              <div class="js-vv-videos-featured-swiper-btn-prev relative isolate flex h-[50px] w-[40px] items-center justify-center bg-white text-primary before:absolute before:inset-y-0 before:left-0 before:-z-10 before:block before:w-full before:origin-left before:scale-x-0 before:bg-gray-100 before:transition-transform before:duration-300 hover:cursor-pointer hover:text-accent hover:before:origin-right hover:before:scale-x-100 dark:bg-gray-800 dark:text-white dark:before:bg-gray-700 dark:hover:text-accent">
+              <div
+                class="js-vv-videos-featured-swiper-btn-prev relative isolate flex h-[50px] w-[40px] items-center justify-center bg-white text-primary before:absolute before:inset-y-0 before:left-0 before:-z-10 before:block before:w-full before:origin-left before:scale-x-0 before:bg-gray-100 before:transition-transform before:duration-300 hover:cursor-pointer hover:text-accent hover:before:origin-right hover:before:scale-x-100 dark:bg-gray-800 dark:text-white dark:before:bg-gray-700 dark:hover:text-accent">
                 <svg class="h-[10px] w-[10px]" fill="currentColor">
                   <use xlink:href="./public/img/sprite.svg#chevron-left"></use>
                 </svg>
               </div>
-              <div class="js-vv-videos-featured-swiper-btn-next relative isolate flex h-[50px] w-[40px] items-center justify-center bg-white text-primary before:absolute before:inset-y-0 before:left-0 before:-z-10 before:block before:w-full before:origin-right before:scale-x-0 before:bg-gray-100 before:transition-transform before:duration-300 hover:cursor-pointer hover:text-accent hover:before:origin-left hover:before:scale-x-100 dark:bg-gray-800 dark:text-white dark:before:bg-gray-700 dark:hover:text-accent">
+              <div
+                class="js-vv-videos-featured-swiper-btn-next relative isolate flex h-[50px] w-[40px] items-center justify-center bg-white text-primary before:absolute before:inset-y-0 before:left-0 before:-z-10 before:block before:w-full before:origin-right before:scale-x-0 before:bg-gray-100 before:transition-transform before:duration-300 hover:cursor-pointer hover:text-accent hover:before:origin-left hover:before:scale-x-100 dark:bg-gray-800 dark:text-white dark:before:bg-gray-700 dark:hover:text-accent">
                 <svg class="h-[10px] w-[10px]" fill="currentColor">
                   <use xlink:href="./public/img/sprite.svg#chevron-right"></use>
                 </svg>
@@ -316,6 +476,125 @@
     </div>
 
     <!-- info Section End -->
+
+    <!-- new video section start -->
+    <div class="new_video_section flex justify-center w-full py-14">
+      <div class="container flex h-[500px] gap-4">
+        <div class="new_video_left_side w-[60%]">
+          <div class="swiper new_video_swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide bg-transparent">
+                <div class="flex relative w-full h-full pt-20">
+                  <div
+                    class="new_video_details w-[50%] bg-red-500 h-full flex flex-col text-left justify-end pb-5 pl-5">
+                    <h3
+                      class="text-white font-bold leading-none text-[24px]"
+                      data-swiper-parallax="-100"
+                      data-swiper-parallax-duration="1100">
+                      GAMING <br />
+                      UNBOXING
+                    </h3>
+                  </div>
+
+                  <img
+                    data-swiper-parallax="-250"
+                    src="./public/img/samples/info-slide-1.png"
+                    class="absolute right-0 top-0 z-50"
+                    alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide bg-transparent">
+                <div class="flex relative w-full h-full pt-20">
+                  <div
+                    class="new_video_details w-[50%] bg-red-500 h-full flex flex-col text-left justify-end pb-5 pl-5">
+                    <h3
+                      class="text-white font-bold leading-none text-[24px]"
+                      data-swiper-parallax="-100"
+                      data-swiper-parallax-duration="1100">
+                      GAMING <br />
+                      UNBOXING
+                    </h3>
+                  </div>
+
+                  <img
+                    data-swiper-parallax="-250"
+                    src="./public/img/samples/info-slide-1.png"
+                    class="absolute right-0 top-0 z-50"
+                    alt="" />
+                </div>
+              </div>
+              <div class="swiper-slide bg-transparent">
+                <div class="flex relative w-full h-full pt-20">
+                  <div
+                    class="new_video_details w-[50%] bg-red-500 h-full flex flex-col text-left justify-end pb-5 pl-5">
+                    <h3
+                      class="text-white font-bold leading-none text-[24px]"
+                      data-swiper-parallax="-100"
+                      data-swiper-parallax-duration="1100">
+                      GAMING <br />
+                      UNBOXING
+                    </h3>
+                  </div>
+
+                  <img
+                    data-swiper-parallax="-250"
+                    src="./public/img/samples/info-slide-1.png"
+                    class="absolute right-0 top-0 z-50"
+                    alt="" />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="absolute bottom-[8%] right-0 z-20 flex items-center sm:right-auto sm:left-[58%]">
+              <div
+                class="new_video_swiper-button-prev flex h-10 w-10 items-center justify-center text-primary hover:cursor-pointer hover:text-accent dark:text-white dark:hover:text-accent">
+                <svg class="h-3 w-3" fill="currentColor">
+                  <use xlink:href="./public/img/sprite.svg#chevron-left"></use>
+                </svg>
+              </div>
+              <div class="new_video-swiper-pagination gap-3 sm:flex"></div>
+              <div
+                class="new_video_swiper-button-next flex h-10 w-10 items-center justify-center text-primary hover:cursor-pointer hover:text-accent dark:text-white dark:hover:text-accent">
+                <svg class="h-3 w-3" fill="currentColor">
+                  <use xlink:href="./public/img/sprite.svg#chevron-right"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right_side w-[40%]">
+          <h3>New Videos</h3>
+          <h2>
+            Every Friday <br />
+            at 9PM
+          </h2>
+
+          <div class="reminder flex gap-2 cursor-pointer">
+            <div class="reminder_icon bg-red-600 p-2.5 rounded-lg">
+              <svg role="img" class="h-6 w-6 fill-white">
+                <use xlink:href="./public/img/sprite.svg#bell"></use>
+              </svg>
+            </div>
+            <p>
+              Remember to
+              <span class="font-bold">turn on the notifications bell</span> so
+              you’ll be informed when a new video is uploaded!
+            </p>
+          </div>
+          <p>
+            We really appreaciate all your comments, likes and suggestions, so
+            keep em coming!
+          </p>
+          <a href="#"> <span></span> See All Videos</a>
+        </div>
+      </div>
+    </div>
+    <!-- new video section End -->
+
+    <footer>
+      <div class="container h-[500px]"></div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
