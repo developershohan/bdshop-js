@@ -144,37 +144,55 @@
     <!-- Bredcrumb End  -->
 
     <!-- shop filters Start -->
-    <section class="shop_filter">
-      <div class="shop_filter_wrapper w-[90%] flex gap-5">
+    <section class="shop_filter w-[90%] flex -mt-[50px]">
+      <div
+        class="container flex justify-end gap-5 bg-white py-8 pr-20 items-center">
         <div class="filter_options flex gap-5">
-          <select name="category" id="">
-            <option value="all_category">all_category</option>
+          <select
+            name="category"
+            id=""
+            class="w-[240px] h-[50px] pl-7 cursor-pointer font-bold capitalize">
+            <option value="all_category">all category</option>
             <option value="shoe">shoe</option>
             <option value="Cloths">Cloths</option>
           </select>
-          <select name="price" id="">
+          <select
+            name="price"
+            id=""
+            class="w-[240px] h-[50px] pl-7 cursor-pointer font-bold capitalize">
             <option value="price">Price</option>
             <option value="high-to-low">High to Low</option>
             <option value="low-to-high">Low To High</option>
           </select>
-          <select name="order" id="">
+          <select
+            name="order"
+            id=""
+            class="w-[240px] h-[50px] pl-7 cursor-pointer font-bold capitalize">
             <option value="decending">Decending</option>
             <option value="Ascending">Ascending</option>
           </select>
         </div>
-        <button type="button">Apply Filter</button>
+        <button
+          type="button"
+          class="bg-red-600 hover:bg-red-500 px-[70px] text-white font-bold h-[100%]">
+          Apply Filter
+        </button>
         <div class="display_options">
-          <ul class=" flex gap-2 ">
+          <ul class="flex gap-4">
             <li>
               <a href="">
-                <svg role="img" class=" rotate-90 h-6 w-6 fill-accent dark:fill-accent">
+                <svg
+                  role="img"
+                  class="rotate-90 h-6 w-6 fill-accent dark:fill-accent">
                   <use xlink:href="./public/img/sprite.svg#grid"></use>
                 </svg>
               </a>
             </li>
             <li>
               <a href="">
-                <svg role="img" class=" rotate-90 h-6 w-6 fill-accent dark:fill-accent">
+                <svg
+                  role="img"
+                  class="rotate-90 h-6 w-6 fill-accent dark:fill-accent">
                   <use xlink:href="./public/img/sprite.svg#grid-sm"></use>
                 </svg>
               </a>
@@ -184,6 +202,85 @@
       </div>
     </section>
     <!-- shop filters End -->
+
+    <!-- product_section start -->
+    <section class="product_section flex justify-center py-14">
+      <div class="container flex gap-5 justify-between items-center flex-wrap">
+        <div
+          class="card w-[32%] flex flex-col justify-center items-center text-center gap-5">
+          <div class="product_img relative overflow-hidden">
+            <img
+              class="w-full h-[300px] object-contain"
+              src="./public/img/samples/product-1-50x50.jpg"
+              alt="" />
+            <div class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
+              <svg role="img" class="h-6 w-6 fill-white">
+                <use xlink:href="./public/img/sprite.svg#shopping-basket"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="product_details">
+            <p class="product_category">Clothing</p>
+            <a href="#" class="hover:text-red-500 text-[18px] font-bold">
+              UNBX Snapback Cap</a
+            >
+            <p class="price font-bold text-[16px]">
+              $<span class="sale_price text-red-500 pr-1">50</span>
+              <span class="regular_price line-through text-gray-400">$80</span>
+            </p>
+          </div>
+        </div>
+        <div class="card w-[32%]">
+          <div class="product_img">
+            <img src="./public/img/samples/product-1-50x50.jpg" alt="" />
+            <div class="add_to_cart_icon">
+              <svg
+                role="img"
+                class="rotate-90 h-6 w-6 fill-accent dark:fill-accent">
+                <use xlink:href="./public/img/sprite.svg#shopping-basket"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="product_details">
+            <p class="product_category">Clothing</p>
+            <a href="#" class="hover:text-red-500"> UNBX Snapback Cap</a>
+          </div>
+        </div>
+        <div class="card w-[32%]">
+          <div class="product_img">
+            <img src="./public/img/samples/product-1-50x50.jpg" alt="" />
+            <div class="add_to_cart_icon">
+              <svg
+                role="img"
+                class="rotate-90 h-6 w-6 fill-accent dark:fill-accent">
+                <use xlink:href="./public/img/sprite.svg#shopping-basket"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="product_details">
+            <p class="product_category">Clothing</p>
+            <a href="#" class="hover:text-red-500"> UNBX Snapback Cap</a>
+          </div>
+        </div>
+        <div class="card w-[32%]">
+          <div class="product_img">
+            <img src="./public/img/samples/product-1-50x50.jpg" alt="" />
+            <div class="add_to_cart_icon">
+              <svg
+                role="img"
+                class="rotate-90 h-6 w-6 fill-accent dark:fill-accent">
+                <use xlink:href="./public/img/sprite.svg#shopping-basket"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="product_details">
+            <p class="product_category">Clothing</p>
+            <a href="#" class="hover:text-red-500"> UNBX Snapback Cap</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- product_section End -->
 
     <footer>
       <div class="container h-[500px]"></div>
