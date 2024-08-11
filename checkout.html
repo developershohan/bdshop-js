@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Cart</title>
+    <title>Checkout</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
@@ -25,7 +25,6 @@
 
   <body>
     <!-- Header Start -->
-
     <div
       class="flex header-wrapper justify-center lg:-mb-[100px] lg:h-[100px] h-[50px] -mb-[50px] bg-white z-100 md:px-10 px-5">
       <div class="container flex justify-between items-center">
@@ -75,12 +74,14 @@
           <div class="theme_mode_toggle"></div>
           <div class="mini_account"></div>
           <div class="add_to_cart relative p-3">
-            <a href="./cart.html" class=" relative">
+            <a href="./cart.html" class="relative">
               <svg role="img" class="h-6 w-6 fill-white">
-                <use
-                  xlink:href="./public/img/sprite.svg#shopping-basket"></use>
+                <use xlink:href="./public/img/sprite.svg#shopping-basket"></use>
               </svg>
-              <span class="cart_quantity absolute -top-1 -right-2 z-10 bg-white w-4 h-4 flex justify-center items-center rounded-lg">0</span>
+              <span
+                class="cart_quantity absolute -top-1 -right-2 z-10 bg-white w-4 h-4 flex justify-center items-center rounded-lg"
+                >0</span
+              >
             </a>
           </div>
           <div class="hamburger flex lg:hidden cursor-pointer">
@@ -136,149 +137,74 @@
         <!-- Mobile End-->
       </div>
     </div>
-
     <!-- Header End -->
 
     <!-- Bredcrumb Start  -->
     <section class="breadcrumb bg-red-500 w-full h-[350px] flex justify-center">
       <div
         class="container flex justify-center text-center text-white flex-col h-full w-full">
-        <h2 class="page_title text-[60px] font-bold">Shopping Cart</h2>
+        <h2 class="page_title text-[60px] font-bold">Checkout</h2>
         <p class="page_path uppercase">
           <span>Home</span><span> | </span><span>Shop</span><span> | </span
-          ><span>Cart</span>
+          ><span>Checkout</span>
         </p>
       </div>
     </section>
     <!-- Bredcrumb End  -->
 
-    <section class="cart_section flex justify-center py-20">
+    <!-- Checkout Section Start -->
+    <section class="checkout_section flex justify-center py-20">
       <div class="container flex flex-wrap justify-between gap-8">
-        <div class="cart_update_container w-[60%]" >
-          <h2 class=" text-[40px] font-bold pb-10 "><span class="text-red-500">3</span> Products in the cart</h2>
-          <div class="cart_update_table w-full">
-            <table class="w-full ">
-              <thead class="mb-4">
-                <tr>
-                  <th class=" py-4 text-left">Product</th>
-                  <th class=" py-4">Price</th>
-                  <th class=" py-4">Quantity</th>
-                  <th class=" py-4">Subtotal</th>
-                  <th class=" py-4"></th>
-                </tr>
-              </thead>
-              <tbody class=" text-center">
-
-
-                <tr >
-                  <td class="py-4">
-                    <div class="cart_product flex gap-4">
-                      <img src="./public/img/samples/product-1-50x50.jpg" alt="">
-                      <div class="cart_product_details">
-                        <div class="category text-left">
-                          <h3 class=" font-bold text-gray-400">Clothing</h3>
-                          <h2 class=" font-bold text-gray-800 text-[18px]">Product1</h2>
-                          <div class="ratings">
-                            3
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="py-4"> <input type="number" name="quantity" id="" value="1" class="w-14"></td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="  text-black  ">
-                    <p class=" cursor-pointer text-[18px]">x</p>
-                  </td>
-                </tr>
-
-                <tr >
-                  <td class="py-4">
-                    <div class="cart_product flex gap-4">
-                      <img src="./public/img/samples/product-1-50x50.jpg" alt="">
-                      <div class="cart_product_details">
-                        <div class="category text-left">
-                          <h3 class=" font-bold text-gray-400">Clothing</h3>
-                          <h2 class=" font-bold text-gray-800 text-[18px]">Product1</h2>
-                          <div class="ratings">
-                            3
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="py-4"> <input type="number" name="quantity" id="" value="1" class="w-14"></td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="  text-black  ">
-                    <p class=" cursor-pointer text-[18px]">x</p>
-                  </td>
-                </tr>
-
-                <tr >
-                  <td class="py-4">
-                    <div class="cart_product flex gap-4">
-                      <img src="./public/img/samples/product-1-50x50.jpg" alt="">
-                      <div class="cart_product_details">
-                        <div class="category text-left">
-                          <h3 class=" font-bold text-gray-400">Clothing</h3>
-                          <h2 class=" font-bold text-gray-800 text-[18px]">Product1</h2>
-                          <div class="ratings">
-                            3
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="py-4"> <input type="number" name="quantity" id="" value="1" class="w-14"></td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="  text-black  ">
-                    <p class=" cursor-pointer text-[18px]">x</p>
-                  </td>
-                </tr>
-
-
-
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="cart_total_container  w-[300px] sticky top-8 self-start p-6 bg-white border shadow-sm">
-          <div class="cart_total_wrapper w-full flex flex-col gap-5">
-            <h2>Cart Totals</h2>
-            <div class="cart_total_details">
-              <p>Subtotal:</p>
-              <p>$<span>100</span></p>
+        <div class="checkout_update_container w-[60%]"></div>
+        <div
+          class="checkout_total_container w-[30%] sticky top-8 self-start p-6 bg-white border shadow-sm">
+          <div class="checkout_total_wrapper w-full flex flex-col gap-3">
+            <div class="order_details w-full flex flex-col gap-3">
+              <h2 class="text-[30px] font-bold pb-2">Your Order</h2>
+              <div class="order_details">
+                <p>product1 <span>x2</span></p>
+                <p>$<span>100</span></p>
+              </div>
+              <div class="order_details">
+                <p>product1 <span>x1</span></p>
+                <p>$<span>10</span></p>
+              </div>
+              <div class="order_details">
+                <p>product1 <span>x2</span></p>
+                <p>$<span>100</span></p>
+              </div>
             </div>
-            <div class="cart_total_details">
-              <p>Shipping:</p>
-              <p>$<span>0</span></p>
-            </div>
-            <div class="cart_total_details">
-              <p>Total:</p>
-              <p>$<span>100</span></p>
+            <div class="cart_details w-full flex flex-col gap-3">
+              <h2 class="text-[30px] font-bold pb-2">Cart Total</h2>
+              <div class="cart_total_details">
+                <p>Subtotal:</p>
+                <p>$<span>100</span></p>
+              </div>
+              <div class="cart_total_details">
+                <p>Shipping:</p>
+                <p>$<span>0</span></p>
+              </div>
+              <div class="cart_total_details">
+                <p>Total:</p>
+                <p>$<span>100</span></p>
+              </div>
             </div>
             <div class="cart_total_buttons w-full flex justify-stretch text-center text-white">
-              <a href="./checkout.html" class="w-full bg-red-500 py-4">Checkout</a>
-            </div>
+                <a href="./thankYou.html" class="w-full bg-red-500 py-4">Place Order</a>
+              </div>
           </div>
         </div>
-
       </div>
-
     </section>
+    <!-- Checkout Section End -->
+    <footer>
+      <div class="container h-[500px]"></div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<footer>
-    <div class="container h-[500px]"></div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <script type="module" src="main.js"></script>
-</body>
+    <script type="module" src="main.js"></script>
+  </body>
 </html>

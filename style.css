@@ -342,3 +342,11 @@ input[type="range"]::-moz-range-thumb{
 .all_content .content.active{
   display: block;
 }
+
+/* cart page */
+.cart_total_details,
+.order_details{
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
