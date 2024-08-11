@@ -27,11 +27,13 @@
     <!-- Header Start -->
 
     <div
-      class="flex header-wrapper justify-center lg:-mb-[100px] lg:h-[100px] h-[50px] -mb-[50px] bg-white z-100">
+      class="flex header-wrapper justify-center lg:-mb-[100px] lg:h-[100px] h-[50px] -mb-[50px] bg-white z-100 md:px-10 px-5">
       <div class="container flex justify-between items-center">
         <!-- logo Start-->
         <div class="logo z-20 w-[100px]">
-          <img src="./public/img/youtube-logo.png" alt="" />
+          <a href="./index.html" rel="noopener noreferrer">
+            <img src="./public/img/youtube-logo.png" alt="" />
+          </a>
         </div>
         <!-- logo End-->
         <!-- nav Start-->
@@ -144,37 +146,72 @@
     <!-- Bredcrumb End  -->
 
     <!-- shop filters Start -->
-    <section class="shop_filter w-[90%] flex -mt-[50px]">
+    <section class="shop_filter w-[95%] flex -mt-[50px] shadow-sm bg-white">
       <div
-        class="container flex justify-end gap-5 bg-white py-8 pr-20 items-center">
-        <div class="filter_options flex gap-5">
+        class="container flex flex-wrap md:flex-row flex-col justify-end gap-5 bg-white py-8 lg:pr-20 pr-5 md:items-center items-stretch p-0 max-sm:p-5">
+        <div class="filter_options flex gap-5 md:flex-row flex-col">
           <select
             name="category"
             id=""
-            class="w-[240px] h-[50px] pl-7 cursor-pointer font-bold capitalize">
+            class="xl:w-[240px] lg:w-[160px] md:w-[135px] w-full h-[50px] pl-7 cursor-pointer font-bold capitalize">
             <option value="all_category">all category</option>
             <option value="shoe">shoe</option>
             <option value="Cloths">Cloths</option>
           </select>
-          <select
-            name="price"
-            id=""
-            class="w-[240px] h-[50px] pl-7 cursor-pointer font-bold capitalize">
-            <option value="price">Price</option>
-            <option value="high-to-low">High to Low</option>
-            <option value="low-to-high">Low To High</option>
-          </select>
+          
           <select
             name="order"
             id=""
-            class="w-[240px] h-[50px] pl-7 cursor-pointer font-bold capitalize">
+            class="xl:w-[240px] lg:w-[160px] md:w-[135px] w-full h-[50px] pl-7 cursor-pointer font-bold capitalize">
             <option value="decending">Decending</option>
             <option value="Ascending">Ascending</option>
           </select>
+          <!-- <div class="wrapper">
+            <div class="price-input">
+              <div class="field">
+                <span>Min</span>
+                <input type="number" class="input-min" value="2500">
+              </div>
+              <div class="separator">-</div>
+              <div class="field">
+                <span>Max</span>
+                <input type="number" class="input-max" value="7500">
+              </div>
+            </div>
+            <div class="slider ">
+              <div class="progress"></div>
+            </div>
+            <div class="range-input">
+              <input type="range" class="range-min" min="0" max="10000" value="2500" step="100">
+              <input type="range" class="range-max" min="0" max="10000" value="7500" step="100">
+            </div>
+          </div> -->
+          <div class="price_range flex flex-col gap-3">
+            <div class="price_input h-[50px] flex ">
+              <div class="field flex items-center">
+                <label> Min</label>
+                <input type="number" value="2500" class=" h-2 w-2 input-min">
+                <!-- <input type="range" value="2500"> -->
+              </div>
+              <span class=" flex h-full justify-center items-center p-2">  - </span>
+              <div class="field flex items-center">
+                <label> Max</label>
+                <input type="number" value="7500" class="input-max">
+                <!-- <input type="range" value="7500"> -->
+              </div>
+            </div>
+            <div class="price_slider bg-slate-300 relative">
+              <div class="price_progress h-2 bg-red-500 rounded absolute left-[25%] left-[25%]"></div>
+            </div>
+            <div class="price_range_input relative -top-4">
+              <input type="range" class="range_min absolute w-full pointer-events-none appearance-none" min="0" max="10000" value="2500" step="100">
+              <input type="range" class="range_max absolute w-full pointer-events-none appearance-none" min="0" max="10000" value="7500" step="100">
+            </div>
+          </div>
         </div>
         <button
           type="button"
-          class="bg-red-600 hover:bg-red-500 px-[70px] text-white font-bold h-[100%]">
+          class="bg-red-600 hover:bg-red-500 lg:px-[70px] px-[30px] text-white font-bold  py-4">
           Apply Filter
         </button>
         <div class="display_options">
@@ -204,16 +241,18 @@
     <!-- shop filters End -->
 
     <!-- product_section start -->
-    <section class="product_section flex justify-center py-14">
-      <div class="container flex gap-5 justify-between items-center flex-wrap">
+    <section class="product_section flex justify-center py-14 bg-white">
+      <div
+        class="container flex gap-5 justify-between items-center flex-wrap md:px-10 px-5">
         <div
-          class="card w-[32%] flex flex-col justify-center items-center text-center gap-5">
-          <div class="product_img relative overflow-hidden">
+          class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5">
+          <div class="product_img w-full relative overflow-hidden">
             <img
-              class="w-full h-[300px] object-contain"
+              class="w-full bg-black h-[300px] object-cover"
               src="./public/img/samples/product-1-50x50.jpg"
               alt="" />
-            <div class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
+            <div
+              class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
               <svg role="img" class="h-6 w-6 fill-white">
                 <use xlink:href="./public/img/sprite.svg#shopping-basket"></use>
               </svg>
@@ -230,57 +269,111 @@
             </p>
           </div>
         </div>
-        <div class="card w-[32%]">
-          <div class="product_img">
-            <img src="./public/img/samples/product-1-50x50.jpg" alt="" />
-            <div class="add_to_cart_icon">
-              <svg
-                role="img"
-                class="rotate-90 h-6 w-6 fill-accent dark:fill-accent">
+        <div
+          class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5">
+          <div class="product_img w-full relative overflow-hidden">
+            <img
+              class="w-full h-[300px] object-cover"
+              src="./public/img/samples/product-1-50x50.jpg"
+              alt="" />
+            <div
+              class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
+              <svg role="img" class="h-6 w-6 fill-white">
                 <use xlink:href="./public/img/sprite.svg#shopping-basket"></use>
               </svg>
             </div>
           </div>
           <div class="product_details">
             <p class="product_category">Clothing</p>
-            <a href="#" class="hover:text-red-500"> UNBX Snapback Cap</a>
+            <a href="#" class="hover:text-red-500 text-[18px] font-bold">
+              UNBX Snapback Cap</a
+            >
+            <p class="price font-bold text-[16px]">
+              $<span class="sale_price text-red-500 pr-1">50</span>
+              <span class="regular_price line-through text-gray-400">$80</span>
+            </p>
           </div>
         </div>
-        <div class="card w-[32%]">
-          <div class="product_img">
-            <img src="./public/img/samples/product-1-50x50.jpg" alt="" />
-            <div class="add_to_cart_icon">
-              <svg
-                role="img"
-                class="rotate-90 h-6 w-6 fill-accent dark:fill-accent">
+        <div
+          class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5">
+          <div class="product_img w-full relative overflow-hidden">
+            <img
+              class="w-full h-[300px] object-cover"
+              src="./public/img/samples/product-1-50x50.jpg"
+              alt="" />
+            <div
+              class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
+              <svg role="img" class="h-6 w-6 fill-white">
                 <use xlink:href="./public/img/sprite.svg#shopping-basket"></use>
               </svg>
             </div>
           </div>
           <div class="product_details">
             <p class="product_category">Clothing</p>
-            <a href="#" class="hover:text-red-500"> UNBX Snapback Cap</a>
+            <a href="#" class="hover:text-red-500 text-[18px] font-bold">
+              UNBX Snapback Cap</a
+            >
+            <p class="price font-bold text-[16px]">
+              $<span class="sale_price text-red-500 pr-1">50</span>
+              <span class="regular_price line-through text-gray-400">$80</span>
+            </p>
           </div>
         </div>
-        <div class="card w-[32%]">
-          <div class="product_img">
-            <img src="./public/img/samples/product-1-50x50.jpg" alt="" />
-            <div class="add_to_cart_icon">
-              <svg
-                role="img"
-                class="rotate-90 h-6 w-6 fill-accent dark:fill-accent">
+        <div
+          class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5">
+          <div class="product_img w-full relative overflow-hidden">
+            <img
+              class="w-full h-[300px] object-cover"
+              src="./public/img/samples/product-1-50x50.jpg"
+              alt="" />
+            <div
+              class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
+              <svg role="img" class="h-6 w-6 fill-white">
                 <use xlink:href="./public/img/sprite.svg#shopping-basket"></use>
               </svg>
             </div>
           </div>
           <div class="product_details">
             <p class="product_category">Clothing</p>
-            <a href="#" class="hover:text-red-500"> UNBX Snapback Cap</a>
+            <a href="#" class="hover:text-red-500 text-[18px] font-bold">
+              UNBX Snapback Cap</a
+            >
+            <p class="price font-bold text-[16px]">
+              $<span class="sale_price text-red-500 pr-1">50</span>
+              <span class="regular_price line-through text-gray-400">$80</span>
+            </p>
           </div>
         </div>
       </div>
     </section>
     <!-- product_section End -->
+
+    <!-- pagination start -->
+    <section class="pagination_section flex justify-center">
+      <div class="container flex justify-center">
+        <ul class="flex gap-3 items-center lg:text-[22px] text-[18px] font-bold">
+          <li>
+            <a href="">
+              <svg class="h-[18px] w-[18px] hover:fill-red-500" fill="currentColor">
+                <use xlink:href="./public/img/sprite.svg#chevron-left"></use>
+              </svg>
+            </a>
+          </li>
+          <li><a href="">01</a></li>
+          <li><a href="">02</a></li>
+          <li><a href="">03</a></li>
+          <li><a href="">04</a></li>
+          <li>
+            <a href="">
+              <svg class="h-[18px] w-[18px] hover:fill-red-500" fill="currentColor">
+                <use xlink:href="./public/img/sprite.svg#chevron-right"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- pagination End -->
 
     <footer>
       <div class="container h-[500px]"></div>
@@ -290,6 +383,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <script type="module" src="main.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>

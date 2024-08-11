@@ -1,6 +1,74 @@
 import "./style.css";
 
 
+// hamburger animation
+
+const open_btn = document.querySelector('.open_button')
+const close_button = document.querySelector('.close_button') 
+
+open_btn.addEventListener('click', ()=>{
+  gsap.to('.mobile_nav',{
+    x:'0%',
+  })
+  open_btn.style.display = "none"
+  close_button.style.display = "flex"
+})
+close_button.addEventListener('click', ()=>{
+  gsap.to('.mobile_nav',{
+    x:'100%'
+  })
+  open_btn.style.display = "flex"
+  close_button.style.display = "none"
+
+
+})
+
+
+// price range
+const rangeInput = document.querySelectorAll(".price_range_input input"),
+priceInput = document.querySelectorAll(".price_input input"),
+range = document.querySelector(".price_slider .price_progress");
+let priceGap = 1000;
+
+priceInput.forEach(input =>{
+    input.addEventListener("input", e =>{
+      console.log(input[0].value);
+        let minPrice = parseInt(priceInput[0].value),
+        maxPrice = parseInt(priceInput[1].value);
+        
+        if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
+            if(e.target.className === "input-min"){
+                rangeInput[0].value = minPrice;
+                range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+            }else{
+                rangeInput[1].value = maxPrice;
+                range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+            }
+        }
+    });
+});
+
+rangeInput.forEach(input =>{
+    input.addEventListener("input", e =>{
+        let minVal = parseInt(rangeInput[0].value),
+        maxVal = parseInt(rangeInput[1].value);
+
+        if((maxVal - minVal) < priceGap){
+            if(e.target.className === "range_min"){
+                rangeInput[0].value = maxVal - priceGap
+            }else{
+                rangeInput[1].value = minVal + priceGap;
+            }
+        }else{
+            priceInput[0].value = minVal;
+            priceInput[1].value = maxVal;
+            range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+            range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+        }
+    });
+});
+
+
 // hero slider
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
@@ -150,25 +218,3 @@ btn.addEventListener('mouseleave', () => {
       }
   });
 });
-
-// hamburger animation
-
-const open_btn = document.querySelector('.open_button')
-const close_button = document.querySelector('.close_button') 
-
-open_btn.addEventListener('click', ()=>{
-  gsap.to('.mobile_nav',{
-    x:'0%',
-  })
-  open_btn.style.display = "none"
-  close_button.style.display = "flex"
-})
-close_button.addEventListener('click', ()=>{
-  gsap.to('.mobile_nav',{
-    x:'100%'
-  })
-  open_btn.style.display = "flex"
-  close_button.style.display = "none"
-
-
-})
