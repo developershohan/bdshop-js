@@ -68,6 +68,26 @@ rangeInput.forEach(input =>{
     });
 });
 
+//single product
+const tabs = document.querySelectorAll(".tab")
+const all_contents = document.querySelectorAll('.content')
+
+tabs.forEach((tab,index)=>{
+  tab.addEventListener('click',()=>{
+    tabs.forEach((tab)=>tab.classList.remove('active'))
+    tab.classList.add('active')
+
+    all_contents.forEach(content=>content.classList.remove('active'))
+    all_contents[index].classList.add('active')
+  })
+
+
+})
+
+
+
+
+
 
 // hero slider
 var swiper = new Swiper(".mySwiper", {
@@ -164,11 +184,31 @@ var new_video_swiper = new Swiper(".new_video_swiper", {
   },
 });
 
-// single product product slider
-var single_product_slider = new Swiper(".single_product_slider", {
+// // single product product slider
+// var single_product_slider = new Swiper(".single_product_slider", {
+//   loop: true,
+//   navigation: {
+//     nextEl: ".product_slider-button-next",
+//     prevEl: ".product_slider-button-prev",
+//   },
+// });
+
+var swiper = new Swiper(".mySwiperProduct", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+var swiper2 = new Swiper(".mySwiper2", {
+  loop: true,
+  spaceBetween: 10,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".product_slider-button-next",
+    prevEl: ".product_slider-button-prev",
+  },
+  thumbs: {
+    swiper: swiper,
   },
 });
 
@@ -224,3 +264,6 @@ btn.addEventListener('mouseleave', () => {
       }
   });
 });
+
+
+

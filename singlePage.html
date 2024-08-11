@@ -74,7 +74,15 @@
         <div class="header_control overflow-hidden z-20">
           <div class="theme_mode_toggle"></div>
           <div class="mini_account"></div>
-          <div class="add_to_cart"></div>
+          <div class="add_to_cart relative p-3">
+            <a href="./cart.html" class=" relative">
+              <svg role="img" class="h-6 w-6 fill-white">
+                <use
+                  xlink:href="./public/img/sprite.svg#shopping-basket"></use>
+              </svg>
+              <span class="cart_quantity absolute -top-1 -right-2 z-10 bg-white w-4 h-4 flex justify-center items-center rounded-lg">0</span>
+            </a>
+          </div>
           <div class="hamburger flex lg:hidden cursor-pointer">
             <div class="open_button">
               <i class="fa-solid fa-bars"></i>
@@ -113,10 +121,10 @@
               </ul>
             </li>
             <li>
-                <a href="./shop.html" class="text-white">Shop</a>
-              </li>
+              <a href="./shop.html" class="text-white">Shop</a>
+            </li>
 
-              <li><a href="./singlePage.html">Single Product</a></li>
+            <li><a href="./singlePage.html">Single Product</a></li>
             <li>
               <a href="home" class="text-black">Home</a>
             </li>
@@ -144,32 +152,172 @@
     </section>
     <!-- Bredcrumb End  -->
 
-
     <!-- Product cart section start -->
-    <section class="product_overview flex justify-center">
-        <div class="container flex justify-center gap-5">
-            <div class="product_images w-[50%]">
-                <div class="swiper single_product_slider">
-                    <div class="swiper-wrapper">
-                      <div class="swiper-slide">Slide 1</div>
-                      <div class="swiper-slide">Slide 2</div>
-                      <div class="swiper-slide">Slide 3</div>
-                      <div class="swiper-slide">Slide 4</div>
-                      <div class="swiper-slide">Slide 5</div>
-                      <div class="swiper-slide">Slide 6</div>
-                      <div class="swiper-slide">Slide 7</div>
-                      <div class="swiper-slide">Slide 8</div>
-                      <div class="swiper-slide">Slide 9</div>
-                    </div>
-                    <div class="product_navigation">
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                  </div>
+
+    <section class="product_overview my-10 flex justify-center">
+      <div class="container flex justify-center gap-5">
+        <div class="product_images w-[30%]">
+          <!-- <div class="swiper single_product_slider relative pt-10">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="h-full w-full object-cover" src="./public/img/samples/product-1-50x50.jpg" alt="">
+              </div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
             </div>
-            <div class="product_details w-[50%]"></div>
+            <div class="product_navigation absolute right-0 bottom-0 z-10 flex">
+              <div
+                class="product_slider-button-prev flex h-[60px] w-[50px] items-center justify-center bg-white text-primary hover:cursor-pointer hover:text-accent">
+                <svg class="h-3 w-3" fill="currentColor">
+                  <use xlink:href="./public/img/sprite.svg#chevron-left"></use>
+                </svg>
+              </div>
+              <div class="product_slider-button-next h-[60px] w-[50px] bg-white flex justify-center items-center">
+                <svg class="h-3 w-3" fill="currentColor">
+                  <use xlink:href="./public/img/sprite.svg#chevron-right"></use>
+                </svg>
+              </div>
+            </div>
+          </div> -->
+
+          <div
+            style="
+              --swiper-navigation-color: #fff;
+              --swiper-pagination-color: #fff;
+            "
+            class="swiper mySwiper2">
+            <div class="swiper-wrapper w-6">
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </div>
+            </div>
+            <div class="product_navigation absolute right-0 bottom-0 z-10 flex">
+              <div
+                class="product_slider-button-prev flex h-[60px] w-[50px] items-center justify-center bg-white text-primary hover:cursor-pointer hover:text-accent">
+                <svg class="h-3 w-3" fill="currentColor">
+                  <use xlink:href="./public/img/sprite.svg#chevron-left"></use>
+                </svg>
+              </div>
+              <div
+                class="product_slider-button-next h-[60px] w-[50px] bg-white flex justify-center items-center">
+                <svg class="h-3 w-3" fill="currentColor">
+                  <use xlink:href="./public/img/sprite.svg#chevron-right"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div thumbsSlider="" class="swiper mySwiperProduct">
+            <div class="swiper-wrapper m-0">
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="product_details w-[50%]">
+          <div class="">
+            <h4>cloths</h4>
+            <h2 class="product_title text-[30px] font-bold capitalize">
+              single product
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+              natus et eius maxime in molestiae tenetur tempora nihil velit
+              ipsa. Veritatis libero, facilis nulla saepe ipsam non itaque cum
+              magnam veniam minus dignissimos, aperiam magni officia blanditiis
+              alias vitae provident. Iusto, modi. Culpa praesentium incidunt
+              molestiae itaque odit iure tenetur.
+            </p>
+            <h3 class="text-[22px] font-bold capitalize">$<span>32</span></h3>
+          </div>
+          <div class="product_variation flex flex-col gap-4">
+            <div class="product_colors">
+              <h2 class="text-[22px] font-bold capitalize">Select Color</h2>
+              <div class="colors_radio_variation flex gap-2">
+                <label for="red" class="relative">
+                  <input
+                    type="radio"
+                    name="red"
+                    id=""
+                    checked="checked"
+                    class="peer form-radio h-8 w-8 rounded-none border-none transition-all duration-150 checked:bg-none hover:cursor-pointer lg:h-8 lg:w-8 text-[#cbcade] bg-[#cbcade] ring-[#cbcade]" />
+                  <span
+                    class="absolute -right-1 -top-1 hidden h-4 w-4 items-center justify-center bg-white peer-checked:inline-flex peer-checked:text-primary dark:bg-gray-900 dark:peer-checked:text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      class="h-[10px] w-[10px]"
+                      fill="currentColor">
+                      <path
+                        d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
+                    </svg>
+                  </span>
+                </label>
+                <label for="yellow">
+                  <input type="radio" name="yellow" id="" />
+                </label>
+                <label for="blue">
+                  <input type="radio" name="blue" id="" />
+                </label>
+              </div>
+            </div>
+            <div class="product_size flex gap-2">
+              <select name="product_size" id="" class="w-[70%]">
+                <option value="Select Size">Select Size</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+              </select>
+              <input
+                type="number"
+                name="quality"
+                id=""
+                class="w-[30%] text-black"
+                value="1" />
+            </div>
+          </div>
+          <button
+            type="button"
+            class="bg-red-600 p-4 px-7 mt-4 font-bold text-white">
+            Add to cart
+          </button>
+        </div>
+      </div>
     </section>
+    <section class="product_additional_info py-10 flex justify-center">
+      <div class="container flex flex-col items-center justify-center">
+        <div class="tabs flex gap-5">
+          <div class="tab active">
+            <h2>Description</h2>
+          </div>
+          <div class="tab">
+            <h2>Specifications</h2>
+          </div>
+          <div class="tab">
+            <h2>Reviews</h2>
+          </div>
+        </div>
+        <div class="all_content">
+          <div class="content active">Descriptions content</div>
+          <div class="content">Specifications content</div>
+          <div class="content">Reviews content</div>
+        </div>
+      </div>
+    </section>
+
     <!-- Product cart section End -->
 
     <footer>
