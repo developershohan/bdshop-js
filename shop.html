@@ -51,8 +51,8 @@
               </a>
               <ul
                 class="absolute hidden top-8 bg-white pl-6 py-8 pr-40 flex flex-col gap-5">
-                <li><a href="home">home</a></li>
-                <li><a href="home">home</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./singlePage.html">Single Product</a></li>
                 <li><a href="home">home</a></li>
                 <li><a href="home">home</a></li>
                 <li><a href="home">home</a></li>
@@ -61,9 +61,8 @@
             <li>
               <a href="./shop.html" class="text-white">Shop</a>
             </li>
-            <li>
-              <a href="home" class="text-white">Home</a>
-            </li>
+
+            <li><a href="./singlePage.html">Single Product</a></li>
             <li>
               <a href="home" class="text-white">Home</a>
             </li>
@@ -106,19 +105,18 @@
               </a>
               <ul
                 class="dropdown_submenu hidden top-8 bg-black pl-6 py-8 pr-40 flex flex-col gap-5">
-                <li><a href="home" class="text-white">home</a></li>
-                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./singlePage.html">Single Product</a></li>
                 <li><a href="home" class="text-white">home</a></li>
                 <li><a href="home" class="text-white">home</a></li>
                 <li><a href="home" class="text-white">home</a></li>
               </ul>
             </li>
             <li>
-              <a href="home" class="text-black">about</a>
+              <a href="./shop.html" class="text-white">Shop</a>
             </li>
-            <li>
-              <a href="home" class="text-black">Contact</a>
-            </li>
+
+            <li><a href="./singlePage.html">Single Product</a></li>
             <li>
               <a href="home" class="text-black">Home</a>
             </li>
@@ -158,7 +156,7 @@
             <option value="shoe">shoe</option>
             <option value="Cloths">Cloths</option>
           </select>
-          
+
           <select
             name="order"
             id=""
@@ -187,31 +185,46 @@
             </div>
           </div> -->
           <div class="price_range flex flex-col gap-3">
-            <div class="price_input h-[50px] flex ">
+            <div class="price_input h-[50px] flex">
               <div class="field flex items-center">
                 <label> Min</label>
-                <input type="number" value="2500" class=" h-2 w-2 input-min">
+                <input type="number" value="2500" class="h-2 w-2 input-min" />
                 <!-- <input type="range" value="2500"> -->
               </div>
-              <span class=" flex h-full justify-center items-center p-2">  - </span>
+              <span class="flex h-full justify-center items-center p-2">
+                -
+              </span>
               <div class="field flex items-center">
                 <label> Max</label>
-                <input type="number" value="7500" class="input-max">
+                <input type="number" value="7500" class="input-max" />
                 <!-- <input type="range" value="7500"> -->
               </div>
             </div>
             <div class="price_slider bg-slate-300 relative">
-              <div class="price_progress h-2 bg-red-500 rounded absolute left-[25%] left-[25%]"></div>
+              <div
+                class="price_progress h-2 bg-red-500 rounded absolute left-[25%] left-[25%]"></div>
             </div>
             <div class="price_range_input relative -top-4">
-              <input type="range" class="range_min absolute w-full pointer-events-none appearance-none" min="0" max="10000" value="2500" step="100">
-              <input type="range" class="range_max absolute w-full pointer-events-none appearance-none" min="0" max="10000" value="7500" step="100">
+              <input
+                type="range"
+                class="range_min absolute w-full pointer-events-none appearance-none"
+                min="0"
+                max="10000"
+                value="2500"
+                step="100" />
+              <input
+                type="range"
+                class="range_max absolute w-full pointer-events-none appearance-none"
+                min="0"
+                max="10000"
+                value="7500"
+                step="100" />
             </div>
           </div>
         </div>
         <button
           type="button"
-          class="bg-red-600 hover:bg-red-500 lg:px-[70px] px-[30px] text-white font-bold  py-4">
+          class="bg-red-600 hover:bg-red-500 lg:px-[70px] px-[30px] text-white font-bold py-4">
           Apply Filter
         </button>
         <div class="display_options">
@@ -351,10 +364,13 @@
     <!-- pagination start -->
     <section class="pagination_section flex justify-center">
       <div class="container flex justify-center">
-        <ul class="flex gap-3 items-center lg:text-[22px] text-[18px] font-bold">
+        <ul
+          class="flex gap-3 items-center lg:text-[22px] text-[18px] font-bold">
           <li>
             <a href="">
-              <svg class="h-[18px] w-[18px] hover:fill-red-500" fill="currentColor">
+              <svg
+                class="h-[18px] w-[18px] hover:fill-red-500"
+                fill="currentColor">
                 <use xlink:href="./public/img/sprite.svg#chevron-left"></use>
               </svg>
             </a>
@@ -365,7 +381,9 @@
           <li><a href="">04</a></li>
           <li>
             <a href="">
-              <svg class="h-[18px] w-[18px] hover:fill-red-500" fill="currentColor">
+              <svg
+                class="h-[18px] w-[18px] hover:fill-red-500"
+                fill="currentColor">
                 <use xlink:href="./public/img/sprite.svg#chevron-right"></use>
               </svg>
             </a>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Demo styles -->
+  </head>
+
+  <body>
+    <!-- Header Start -->
+
+    <div
+      class="flex header-wrapper justify-center lg:-mb-[100px] lg:h-[100px] h-[50px] -mb-[50px] bg-white z-100 md:px-10 px-5">
+      <div class="container flex justify-between items-center">
+        <!-- logo Start-->
+        <div class="logo z-20 w-[100px]">
+          <a href="./index.html" rel="noopener noreferrer">
+            <img src="./public/img/youtube-logo.png" alt="" />
+          </a>
+        </div>
+        <!-- logo End-->
+        <!-- nav Start-->
+        <div class="nav z-20 hidden lg:flex">
+          <ul class="flex gap-10 relative">
+            <li class="active:underline hover:underline">
+              <a href="home" class="text-white">Home</a>
+            </li>
+            <li>
+              <a href="./shop.html" class="text-white"
+                >Home
+                <svg role="img" class="h-2 w-2 rotate-90 fill-white">
+                  <use xlink:href="./public/img/sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+              <ul
+                class="absolute hidden top-8 bg-white pl-6 py-8 pr-40 flex flex-col gap-5">
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./singlePage.html">Single Product</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+              </ul>
+            </li>
+            <li><a href="./shop.html">Shop</a></li>
+            <li><a href="./singlePage.html">Single Product</a></li>
+            <li>
+              <a href="home" class="text-white">Home</a>
+            </li>
+            <li>
+              <a href="home" class="text-white">Home</a>
+            </li>
+          </ul>
+        </div>
+        <!-- nav End-->
+
+        <!-- header control Start -->
+        <div class="header_control overflow-hidden z-20">
+          <div class="theme_mode_toggle"></div>
+          <div class="mini_account"></div>
+          <div class="add_to_cart"></div>
+          <div class="hamburger flex lg:hidden cursor-pointer">
+            <div class="open_button">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="close_button hidden">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+        </div>
+        <!-- header control End -->
+
+        <!-- Mobile Start-->
+        <div
+          class="visible lg:hidden mobile_nav bg-white w-full h-full bottom-0 top-14 pt-10 px-8 absolute left-0 right-0 z-20">
+          <ul class="flex flex-col gap-10 relative">
+            <li class="active:underline hover:underline">
+              <a href="home" class="text-black">Home</a>
+            </li>
+            <li class="relative dropdown__item">
+              <a href="home" class="text-black"
+                >Home
+                <svg role="img" class="h-2 w-2 rotate-90 fill-black z-20">
+                  <use xlink:href="assets/img/yt1/sprite.svg#arrow-right"></use>
+                </svg>
+              </a>
+              <ul
+                class="dropdown_submenu hidden top-8 bg-black pl-6 py-8 pr-40 flex flex-col gap-5">
+                <li>
+                  <a href="./shop.html" class="text-white">Shop</a>
+                </li>
+
+                <li><a href="./singlePage.html">Single Product</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+                <li><a href="home" class="text-white">home</a></li>
+              </ul>
+            </li>
+            <li>
+                <a href="./shop.html" class="text-white">Shop</a>
+              </li>
+
+              <li><a href="./singlePage.html">Single Product</a></li>
+            <li>
+              <a href="home" class="text-black">Home</a>
+            </li>
+            <li>
+              <a href="home" class="text-black">Home</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Mobile End-->
+      </div>
+    </div>
+
+    <!-- Header End -->
+
+    <!-- Bredcrumb Start  -->
+    <section class="breadcrumb bg-red-500 w-full h-[350px] flex justify-center">
+      <div
+        class="container flex justify-center text-center text-white flex-col h-full w-full">
+        <h2 class="page_title text-[60px] font-bold">Single Product</h2>
+        <p class="page_path uppercase">
+          <span>Home</span><span> | </span><span>Shop</span><span> | </span
+          ><span>Single Product</span>
+        </p>
+      </div>
+    </section>
+    <!-- Bredcrumb End  -->
+
+
+    <!-- Product cart section start -->
+    <section class="product_overview flex justify-center">
+        <div class="container flex justify-center gap-5">
+            <div class="product_images w-[50%]">
+                <div class="swiper single_product_slider">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">Slide 1</div>
+                      <div class="swiper-slide">Slide 2</div>
+                      <div class="swiper-slide">Slide 3</div>
+                      <div class="swiper-slide">Slide 4</div>
+                      <div class="swiper-slide">Slide 5</div>
+                      <div class="swiper-slide">Slide 6</div>
+                      <div class="swiper-slide">Slide 7</div>
+                      <div class="swiper-slide">Slide 8</div>
+                      <div class="swiper-slide">Slide 9</div>
+                    </div>
+                    <div class="product_navigation">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product_details w-[50%]"></div>
+        </div>
+    </section>
+    <!-- Product cart section End -->
+
+    <footer>
+      <div class="container h-[500px]"></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

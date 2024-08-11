@@ -164,7 +164,13 @@ var new_video_swiper = new Swiper(".new_video_swiper", {
   },
 });
 
-
+// single product product slider
+var single_product_slider = new Swiper(".single_product_slider", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const tl = gsap.timeline();
