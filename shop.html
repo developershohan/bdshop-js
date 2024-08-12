@@ -161,11 +161,11 @@
         <div class="filter_options flex gap-5 md:flex-row flex-col">
           <select
             name="category"
-            id=""
-            class="xl:w-[240px] lg:w-[160px] md:w-[135px] w-full h-[50px] pl-7 cursor-pointer font-bold capitalize">
-            <option value="all_category">all category</option>
+            id="category_filter"
+            class=" xl:w-[240px] lg:w-[160px] md:w-[135px] w-full h-[50px] pl-7 cursor-pointer font-bold capitalize">
+            <!-- <option value="all_category">all category</option>
             <option value="shoe">shoe</option>
-            <option value="Cloths">Cloths</option>
+            <option value="Cloths">Cloths</option> -->
           </select>
 
           <select
@@ -268,122 +268,9 @@
     <section class="product_section flex justify-center py-14 bg-white">
       <div
         class="container flex gap-5 justify-between items-center flex-wrap md:px-10 px-5">
-        <div
-          class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5">
-          <div class="product_img w-full relative overflow-hidden">
-            <a href="./cart.html">
-              <img
-                class="w-full bg-black h-[300px] object-cover"
-                src="/img/samples/product-1-50x50.jpg"
-                alt="" />
-            </a>
-            <div
-              class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
-              <svg role="img" class="h-6 w-6 fill-white">
-                <use xlink:href="/img/sprite.svg#shopping-basket"></use>
-              </svg>
-            </div>
-          </div>
-          <div class="product_details">
-            <p class="product_category">Clothing</p>
-            <a
-              href="./cart.html"
-              class="hover:text-red-500 text-[18px] font-bold">
-              UNBX Snapback Cap</a
-            >
-            <p class="price font-bold text-[16px]">
-              $<span class="sale_price text-red-500 pr-1">50</span>
-              <span class="regular_price line-through text-gray-400">$80</span>
-            </p>
-          </div>
-        </div>
-        <div
-          class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5">
-          <div class="product_img w-full relative overflow-hidden">
-            <a href="./cart.html">
-              <img
-                class="w-full bg-black h-[300px] object-cover"
-                src="/img/samples/product-1-50x50.jpg"
-                alt="" />
-            </a>
-            <div
-              class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
-              <svg role="img" class="h-6 w-6 fill-white">
-                <use xlink:href="/img/sprite.svg#shopping-basket"></use>
-              </svg>
-            </div>
-          </div>
-          <div class="product_details">
-            <p class="product_category">Clothing</p>
-            <a
-              href="./cart.html"
-              class="hover:text-red-500 text-[18px] font-bold">
-              UNBX Snapback Cap</a
-            >
-            <p class="price font-bold text-[16px]">
-              $<span class="sale_price text-red-500 pr-1">50</span>
-              <span class="regular_price line-through text-gray-400">$80</span>
-            </p>
-          </div>
-        </div>
-        <div
-          class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5">
-          <div class="product_img w-full relative overflow-hidden">
-            <a href="./cart.html">
-              <img
-                class="w-full bg-black h-[300px] object-cover"
-                src="/img/samples/product-1-50x50.jpg"
-                alt="" />
-            </a>
-            <div
-              class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
-              <svg role="img" class="h-6 w-6 fill-white">
-                <use xlink:href="/img/sprite.svg#shopping-basket"></use>
-              </svg>
-            </div>
-          </div>
-          <div class="product_details">
-            <p class="product_category">Clothing</p>
-            <a
-              href="./cart.html"
-              class="hover:text-red-500 text-[18px] font-bold">
-              UNBX Snapback Cap</a
-            >
-            <p class="price font-bold text-[16px]">
-              $<span class="sale_price text-red-500 pr-1">50</span>
-              <span class="regular_price line-through text-gray-400">$80</span>
-            </p>
-          </div>
-        </div>
-        <div
-          class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5">
-          <div class="product_img w-full relative overflow-hidden">
-            <a href="./cart.html">
-              <img
-                class="w-full bg-black h-[300px] object-cover"
-                src="/img/samples/product-1-50x50.jpg"
-                alt="" />
-            </a>
-            <div
-              class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
-              <svg role="img" class="h-6 w-6 fill-white">
-                <use xlink:href="/img/sprite.svg#shopping-basket"></use>
-              </svg>
-            </div>
-          </div>
-          <div class="product_details">
-            <p class="product_category">Clothing</p>
-            <a
-              href="./cart.html"
-              class="hover:text-red-500 text-[18px] font-bold">
-              UNBX Snapback Cap</a
-            >
-            <p class="price font-bold text-[16px]">
-              $<span class="sale_price text-red-500 pr-1">50</span>
-              <span class="regular_price line-through text-gray-400">$80</span>
-            </p>
-          </div>
-        </div>
+
+
+
       </div>
     </section>
     <!-- product_section End -->
@@ -427,6 +314,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script type="module" src="./main.js"></script>
   </body>
