@@ -27,26 +27,26 @@
     <!-- Header Start -->
 
     <div
-    class="flex header-wrapper justify-center lg:-mb-[100px] lg:h-[100px] h-[50px] -mb-[50px] bg-white z-100 md:px-10 px-5">
-    <div class="container flex justify-between items-center">
-      <!-- logo Start-->
-      <div class="logo z-20 w-[100px]">
-        <a href="./index.html" rel="noopener noreferrer">
-          <img src="/img/youtube-logo.png" alt="" />
-        </a>
-      </div>
+      class="flex header-wrapper justify-center lg:-mb-[100px] lg:h-[100px] h-[50px] -mb-[50px] bg-white z-100 md:px-10 px-5">
+      <div class="container flex justify-between items-center">
+        <!-- logo Start-->
+        <div class="logo z-20 w-[100px]">
+          <a href="/" rel="noopener noreferrer">
+            <img src="assets/img/youtube-logo.png" alt="" />
+          </a>
+        </div>
         <!-- logo End-->
         <!-- nav Start-->
         <div class="nav z-20 hidden lg:flex">
           <ul class="flex gap-10 relative">
             <li class="active:underline hover:underline">
-              <a href="home" class="text-white">Home</a>
+              <a href="/" class="text-white">Home</a>
             </li>
             <li>
               <a href="./shop.html" class="text-white"
                 >Home
                 <svg role="img" class="h-2 w-2 rotate-90 fill-white">
-                  <use xlink:href="/img/sprite.svg#arrow-right"></use>
+                  <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
                 </svg>
               </a>
               <ul
@@ -62,13 +62,13 @@
               <a href="./shop.html" class="text-white">Shop</a>
             </li>
             <li>
-              <a href="home" class="text-white">Home</a>
+              <a href="./singlePage.html" class="text-white">Single Product</a>
             </li>
             <li>
-              <a href="home" class="text-white">Home</a>
+              <a href="./cart.html" class="text-white">Cart</a>
             </li>
             <li>
-              <a href="home" class="text-white">Home</a>
+              <a href="./checkout.html" class="text-white">Checkout</a>
             </li>
           </ul>
         </div>
@@ -78,7 +78,15 @@
         <div class="header_control overflow-hidden z-20">
           <div class="theme_mode_toggle"></div>
           <div class="mini_account"></div>
-          <div class="add_to_cart"></div>
+          <div class="add_to_cart relative p-3">
+            <a href="./cart.html" class=" relative">
+              <svg role="img" class="h-6 w-6 fill-white">
+                <use
+                  xlink:href="assets/img/sprite.svg#shopping-basket"></use>
+              </svg>
+              <span class="cart_quantity absolute -top-1 -right-2 z-10 bg-white w-4 h-4 flex justify-center items-center rounded-lg">0</span>
+            </a>
+          </div>
           <div class="hamburger flex lg:hidden cursor-pointer">
             <div class="open_button">
               <i class="fa-solid fa-bars"></i>
@@ -149,7 +157,7 @@
                     <div
                       class="hero_img lg:justify-start w-full flex justify-center">
                       <img
-                        src="/img/samples/youtube.svg"
+                        src="assets/img/samples/youtube.svg"
                         class="w-[150px] pb-5"
                         alt="" />
                     </div>
@@ -185,7 +193,7 @@
                     <div
                       class="slider1_img lg:scale-90 duration-700 lg:absolute lg:bottom-0 lg:right-0 -mb-12 opacity-0 transition-all group-[.swiper-slide-active:not(.vv-slide-played)]:scale-100 group-[.vv-slide-played]:scale-100 group-[.vv-slide-played]:opacity-100 group-[.swiper-slide-active:not(.vv-slide-played)]:opacity-100">
                       <img
-                        src="/img/samples/hero-person.png"
+                        src="assets/img/samples/hero-person.png"
                         alt=""
                         srcset="" />
                     </div>
@@ -206,7 +214,7 @@
                   <div class="col-span-6 lg:col-span-5 content-center">
                     <div class="slider1_img scale-90">
                       <img
-                        src="/img/samples/hero-person.png"
+                        src="assets/img/samples/hero-person.png"
                         alt=""
                         srcset="" />
                     </div>
@@ -235,14 +243,14 @@
               <div class="w-full h-full flex justify-center align-middle">
                 <div class="info-card">
                   <div class="info_card_img relative">
-                    <img src="/img/samples/info-slide-1.png" alt="" />
+                    <img src="assets/img/samples/info-slide-1.png" alt="" />
 
                     <div
                       class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
                       <svg
                         class="h-[15px] w-[15px] text-white"
                         fill="currentColor">
-                        <use xlink:href="/img/sprite.svg#play"></use>
+                        <use xlink:href="assets/img/sprite.svg#play"></use>
                       </svg>
                     </div>
                   </div>
@@ -263,14 +271,14 @@
               <div class="w-full h-full flex justify-center align-middle">
                 <div class="info-card">
                   <div class="info_card_img relative">
-                    <img src="/img/samples/info-slide-1.png" alt="" />
+                    <img src="assets/img/samples/info-slide-1.png" alt="" />
 
                     <div
                       class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
                       <svg
                         class="h-[15px] w-[15px] text-white"
                         fill="currentColor">
-                        <use xlink:href="/img/sprite.svg#play"></use>
+                        <use xlink:href="assets/img/sprite.svg#play"></use>
                       </svg>
                     </div>
                   </div>
@@ -291,14 +299,14 @@
               <div class="w-full h-full flex justify-center align-middle">
                 <div class="info-card">
                   <div class="info_card_img relative">
-                    <img src="/img/samples/info-slide-1.png" alt="" />
+                    <img src="assets/img/samples/info-slide-1.png" alt="" />
 
                     <div
                       class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
                       <svg
                         class="h-[15px] w-[15px] text-white"
                         fill="currentColor">
-                        <use xlink:href="/img/sprite.svg#play"></use>
+                        <use xlink:href="assets/img/sprite.svg#play"></use>
                       </svg>
                     </div>
                   </div>
@@ -319,14 +327,14 @@
               <div class="w-full h-full flex justify-center align-middle">
                 <div class="info-card">
                   <div class="info_card_img relative">
-                    <img src="/img/samples/info-slide-1.png" alt="" />
+                    <img src="assets/img/samples/info-slide-1.png" alt="" />
 
                     <div
                       class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
                       <svg
                         class="h-[15px] w-[15px] text-white"
                         fill="currentColor">
-                        <use xlink:href="/img/sprite.svg#play"></use>
+                        <use xlink:href="assets/img/sprite.svg#play"></use>
                       </svg>
                     </div>
                   </div>
@@ -347,14 +355,14 @@
               <div class="w-full h-full flex justify-center align-middle">
                 <div class="info-card">
                   <div class="info_card_img relative">
-                    <img src="/img/samples/info-slide-1.png" alt="" />
+                    <img src="assets/img/samples/info-slide-1.png" alt="" />
 
                     <div
                       class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
                       <svg
                         class="h-[15px] w-[15px] text-white"
                         fill="currentColor">
-                        <use xlink:href="/img/sprite.svg#play"></use>
+                        <use xlink:href="assets/img/sprite.svg#play"></use>
                       </svg>
                     </div>
                   </div>
@@ -375,14 +383,14 @@
               <div class="w-full h-full flex justify-center align-middle">
                 <div class="info-card">
                   <div class="info_card_img relative">
-                    <img src="/img/samples/info-slide-1.png" alt="" />
+                    <img src="assets/img/samples/info-slide-1.png" alt="" />
 
                     <div
                       class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
                       <svg
                         class="h-[15px] w-[15px] text-white"
                         fill="currentColor">
-                        <use xlink:href="/img/sprite.svg#play"></use>
+                        <use xlink:href="assets/img/sprite.svg#play"></use>
                       </svg>
                     </div>
                   </div>
@@ -403,14 +411,14 @@
               <div class="w-full h-full flex justify-center align-middle">
                 <div class="info-card">
                   <div class="info_card_img relative">
-                    <img src="/img/samples/info-slide-1.png" alt="" />
+                    <img src="assets/img/samples/info-slide-1.png" alt="" />
 
                     <div
                       class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
                       <svg
                         class="h-[15px] w-[15px] text-white"
                         fill="currentColor">
-                        <use xlink:href="/img/sprite.svg#play"></use>
+                        <use xlink:href="assets/img/sprite.svg#play"></use>
                       </svg>
                     </div>
                   </div>
@@ -427,34 +435,7 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide w-[350px] h-[400px] group">
-              <div class="w-full h-full flex justify-center align-middle">
-                <div class="info-card">
-                  <div class="info_card_img relative">
-                    <img src="/img/samples/info-slide-1.png" alt="" />
 
-                    <div
-                      class="absolute top-[45%] left-[45%] rounded-full bg-red-500 h-[40px] w-[40px] grid justify-center content-center">
-                      <svg
-                        class="h-[15px] w-[15px] text-white"
-                        fill="currentColor">
-                        <use xlink:href="/img/sprite.svg#play"></use>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="info_details flex flex-col gap-2">
-                    <h3 class="info_title text-start font-semibold">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Maiores rerum
-                    </h3>
-                    <p class="text-start">
-                      <span>231k views</span> <span>-</span>
-                      <span>8 hours ago</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <div class="absolute md:-top-2 md:-left-2 top-0 left-0">
@@ -463,13 +444,13 @@
               <div
                 class="js-vv-videos-featured-swiper-btn-prev relative isolate flex h-[50px] w-[40px] items-center justify-center bg-white text-primary before:absolute before:inset-y-0 before:left-0 before:-z-10 before:block before:w-full before:origin-left before:scale-x-0 before:bg-gray-100 before:transition-transform before:duration-300 hover:cursor-pointer hover:text-accent hover:before:origin-right hover:before:scale-x-100 dark:bg-gray-800 dark:text-white dark:before:bg-gray-700 dark:hover:text-accent">
                 <svg class="h-[10px] w-[10px]" fill="currentColor">
-                  <use xlink:href="/img/sprite.svg#chevron-left"></use>
+                  <use xlink:href="assets/img/sprite.svg#chevron-left"></use>
                 </svg>
               </div>
               <div
                 class="js-vv-videos-featured-swiper-btn-next relative isolate flex h-[50px] w-[40px] items-center justify-center bg-white text-primary before:absolute before:inset-y-0 before:left-0 before:-z-10 before:block before:w-full before:origin-right before:scale-x-0 before:bg-gray-100 before:transition-transform before:duration-300 hover:cursor-pointer hover:text-accent hover:before:origin-left hover:before:scale-x-100 dark:bg-gray-800 dark:text-white dark:before:bg-gray-700 dark:hover:text-accent">
                 <svg class="h-[10px] w-[10px]" fill="currentColor">
-                  <use xlink:href="/img/sprite.svg#chevron-right"></use>
+                  <use xlink:href="assets/img/sprite.svg#chevron-right"></use>
                 </svg>
               </div>
             </div>
@@ -501,7 +482,7 @@
 
                   <img
                     data-swiper-parallax="-250"
-                    src="/img/samples/info-slide-1.png"
+                    src="assets/img/samples/info-slide-1.png"
                     class="absolute right-0 top-0 z-50"
                     alt="" />
                 </div>
@@ -521,7 +502,7 @@
 
                   <img
                     data-swiper-parallax="-250"
-                    src="/img/samples/info-slide-1.png"
+                    src="assets/img/samples/info-slide-1.png"
                     class="absolute right-0 top-0 z-50"
                     alt="" />
                 </div>
@@ -541,7 +522,7 @@
 
                   <img
                     data-swiper-parallax="-250"
-                    src="/img/samples/info-slide-1.png"
+                    src="assets/img/samples/info-slide-1.png"
                     class="absolute right-0 top-0 z-50"
                     alt="" />
                 </div>
@@ -553,14 +534,14 @@
               <div
                 class="new_video_swiper-button-prev flex h-10 w-10 items-center justify-center text-primary hover:cursor-pointer hover:text-accent dark:text-white dark:hover:text-accent">
                 <svg class="h-3 w-3" fill="currentColor">
-                  <use xlink:href="/img/sprite.svg#chevron-left"></use>
+                  <use xlink:href="assets/img/sprite.svg#chevron-left"></use>
                 </svg>
               </div>
               <div class="new_video-swiper-pagination gap-3 sm:flex"></div>
               <div
                 class="new_video_swiper-button-next flex h-10 w-10 items-center justify-center text-primary hover:cursor-pointer hover:text-accent dark:text-white dark:hover:text-accent">
                 <svg class="h-3 w-3" fill="currentColor">
-                  <use xlink:href="/img/sprite.svg#chevron-right"></use>
+                  <use xlink:href="assets/img/sprite.svg#chevron-right"></use>
                 </svg>
               </div>
             </div>
@@ -576,7 +557,7 @@
           <div class="reminder flex gap-2 cursor-pointer">
             <div class="reminder_icon bg-red-600 p-2.5 rounded-lg">
               <svg role="img" class="h-6 w-6 fill-white">
-                <use xlink:href="/img/sprite.svg#bell"></use>
+                <use xlink:href="assets/img/sprite.svg#bell"></use>
               </svg>
             </div>
             <p>
@@ -603,6 +584,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <script type="module" src="main.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

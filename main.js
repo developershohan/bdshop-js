@@ -1,6 +1,3 @@
-import "./style.css";
-
-
 // hamburger animation
 
 const open_btn = document.querySelector('.open_button')
