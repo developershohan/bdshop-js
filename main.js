@@ -26,7 +26,6 @@ let priceGap = 1000;
 
 priceInput.forEach((input) => {
   input.addEventListener("input", (e) => {
-
     let minPrice = parseInt(priceInput[0].value),
       maxPrice = parseInt(priceInput[1].value);
 
@@ -179,8 +178,6 @@ var new_video_swiper = new Swiper(".new_video_swiper", {
 //   },
 // });
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const tl = gsap.timeline();
 
@@ -236,16 +233,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // get product from api
 
-const getProduct  = async ()=>{
+const getProduct = async () => {
   try {
-    const res = await axios.get("https://backend-captain-api.vercel.app/api/v1/product/");
+    const res = await axios.get(
+      "https://backend-captain-api.vercel.app/api/v1/product/"
+    );
     const products = res.data;
-  
+
     console.log(products);
-  
-  
+
     let content = "";
-  
+
     if (products.length > 0) {
       products.forEach((product, index) => {
         content += `
@@ -273,7 +271,7 @@ const getProduct  = async ()=>{
                 ${product.name}</a
               >
               <p class="price font-bold text-[16px]">
-                $<span class="sale_price text-red-500 pr-1">${product.baseprice}</span>
+                $<span class="sale_price text-red-500 pr-1">${product.basePrice}</span>
                 <span class="regular_price line-through text-gray-400">$80</span>
               </p>
             </div>
@@ -286,13 +284,12 @@ const getProduct  = async ()=>{
       );
       product_container.innerHTML = content;
     }
-  
+
     const uniqueCategories = new Set();
     products.forEach((product) => {
       uniqueCategories.add(product.category);
     });
-  
-  
+
     uniqueCategories.forEach((category) => {
       content += `
               <option value="${category}">${category}</option>
@@ -301,16 +298,11 @@ const getProduct  = async ()=>{
     });
     const product_category = document.querySelector("#category_filter");
     product_category.innerHTML = content;
-  
-  
-  
-    
   } catch (error) {
     console.error(error);
   }
-  
-}
-getProduct()
+};
+getProduct();
 // single product details
 
 const getSingleproduct = async () => {
@@ -319,7 +311,6 @@ const getSingleproduct = async () => {
   try {
     const res = await axios.get(`https://dummyjson.com/products/${productId}`);
     const product = res.data;
-
 
     const productImages = res.data.images;
 
@@ -346,12 +337,11 @@ const getSingleproduct = async () => {
             </h2>
             <p>
               ${product.description}
-            </p>
+            </p>s
             <h3 class="text-[22px] font-bold capitalize">$<span>${product.price}</span></h3>
 
     
     `;
-
 
     document.querySelector(".product_info").innerHTML = content1;
 
