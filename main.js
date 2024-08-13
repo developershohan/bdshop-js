@@ -26,7 +26,7 @@ let priceGap = 1000;
 
 priceInput.forEach((input) => {
   input.addEventListener("input", (e) => {
-    console.log(input[0].value);
+
     let minPrice = parseInt(priceInput[0].value),
       maxPrice = parseInt(priceInput[1].value);
 
@@ -236,8 +236,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // get product from api
 try {
-  const res = await axios.get("https://dummyjson.com/products");
-  const products = res.data.products;
+  const res = await axios.get("https://backend-captain-api.vercel.app/api/v1/product/");
+  const products = res.data;
+  console.log(products);
+
 
   let content = "";
 
@@ -245,12 +247,12 @@ try {
     products.forEach((product, index) => {
       content += `
         <div
-          class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5" id = card${product.id}>
+          class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5" id = card${product._id}>
           <div class="product_img w-full relative overflow-hidden">
-            <a href="./singlePage.html?id=${product.id}">
+            <a href="./singlePage.html?id=${product._id}">
               <img
                 class="w-full bg-black h-[300px] object-cover"
-                src="${product.thumbnail}"
+                src="${product.imageUrl}"
                 alt="" />
             </a>
             <div
@@ -265,10 +267,10 @@ try {
             <a
               href="./cart.html"
               class="hover:text-red-500 text-[18px] font-bold">
-              ${product.title}</a
+              ${product.name}</a
             >
             <p class="price font-bold text-[16px]">
-              $<span class="sale_price text-red-500 pr-1">${product.price}</span>
+              $<span class="sale_price text-red-500 pr-1">${product.baseprice}</span>
               <span class="regular_price line-through text-gray-400">$80</span>
             </p>
           </div>
@@ -286,7 +288,7 @@ try {
   products.forEach((product) => {
     uniqueCategories.add(product.category);
   });
-  console.log(uniqueCategories);
+
 
   uniqueCategories.forEach((category) => {
     content += `
@@ -312,7 +314,7 @@ const getSingleproduct = async () => {
   try {
     const res = await axios.get(`https://dummyjson.com/products/${productId}`);
     const product = res.data;
-    console.log(product);
+
 
     const productImages = res.data.images;
 
