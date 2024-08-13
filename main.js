@@ -240,8 +240,6 @@ const getProduct = async () => {
     );
     const products = res.data;
 
-    console.log(products);
-
     let content = "";
 
     if (products.length > 0) {
@@ -309,16 +307,20 @@ const getSingleproduct = async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
   try {
-    const res = await axios.get(`https://dummyjson.com/products/${productId}`);
+    const res = await axios.get(
+      `https://backend-captain-api.vercel.app/api/v1/product/${productId}`
+    );
     const product = res.data;
+    console.log(product);
 
-    const productImages = res.data.images;
+    const productImages = res.data.gallery;
+    const productVariations = res.data.variations;
 
     let sliderImage = "";
     productImages.forEach((image) => {
       sliderImage += `
       <div class="swiper-slide">
-      <img src="${image}" />
+      <img src="${image.url}" />
       </div>
       `;
     });
@@ -329,21 +331,33 @@ const getSingleproduct = async () => {
       sliderImage;
 
     let content1 = `
-
-
             <h4>${product.category}</h4>
             <h2 class="product_title text-[30px] font-bold capitalize">
-              ${product.title}
+              ${product.name}
             </h2>
             <p>
               ${product.description}
             </p>s
-            <h3 class="text-[22px] font-bold capitalize">$<span>${product.price}</span></h3>
+            <h3 class="text-[22px] font-bold capitalize">$<span>${product.basePrice}</span></h3>
 
     
     `;
 
     document.querySelector(".product_info").innerHTML = content1;
+    
+    let content2 = ""
+    productVariations.forEach((variation,index)=>{
+      console.log(variation.size);
+      
+      content2 +=`
+      <option value=" ${variation.size} ">${variation.size}</option>
+      
+      `
+    })
+    document.querySelector("#product_size").innerHTML = content2;
+    
+
+    
 
     var swiper = new Swiper(".mySwiperProduct", {
       loop: true,
