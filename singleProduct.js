@@ -9,10 +9,9 @@ const getSingleProduct = async () => {
       `https://backend-captain-api.vercel.app/api/v1/product/${productId}`
     );
     const product = res.data;
-    console.log(product);
-    
-    const productImages = res.data.gallery;
-    const productVariations = res.data.variations;
+
+    const productImages = product.gallery;
+    const productVariations = product.variations;
 
     // Update product images
     let sliderImage = "";
@@ -36,16 +35,28 @@ const getSingleProduct = async () => {
     document.querySelector(".product_info").innerHTML = content1;
 
     if (productVariations && productVariations.length > 0) {
-      // Create a map to store variations by size and color
+      // Create Maps
+      const colorToSizesMap = new Map();
       const variationMap = new Map();
+      const basePrice = product.basePrice;
+
       productVariations.forEach((variation) => {
-        const key = `${variation.size}-${variation.color}`;
-        variationMap.set(key, variation.price);
+        const { color, size, price } = variation;
+
+        // Populate colorToSizesMap
+        if (!colorToSizesMap.has(color)) {
+          colorToSizesMap.set(color, new Set());
+        }
+        colorToSizesMap.get(color).add(size);
+
+        // Populate variationMap
+        const key = `${size}-${color}`;
+        variationMap.set(key, price);
       });
 
-      // Generate color radio buttons dynamically
+      // Generate color radio buttons
       let colorOptions = "";
-      const uniqueColors = new Set(productVariations.map(variation => variation.color));
+      const uniqueColors = new Set(productVariations.map((variation) => variation.color));
 
       uniqueColors.forEach((color, index) => {
         colorOptions += `
@@ -61,13 +72,8 @@ const getSingleProduct = async () => {
             />
             <span
               class="absolute -right-1 -top-1 hidden h-4 w-4 items-center justify-center bg-white peer-checked:inline-flex peer-checked:text-primary dark:bg-gray-900 dark:peer-checked:text-white">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                class="h-[10px] w-[10px]"
-                fill="currentColor">
-                <path
-                  d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-[10px] w-[10px]" fill="currentColor">
+                <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
               </svg>
             </span>
           </label>
@@ -76,66 +82,86 @@ const getSingleProduct = async () => {
 
       document.querySelector(".colors_radio_variation").innerHTML = colorOptions;
 
-      // Generate size options dynamically
-      let sizeOptions = "";
-      const uniqueSizes = new Set(productVariations.map(variation => variation.size));
+      // Function to update size options based on selected color
+      const updateSizeOptions = (selectedColor) => {
+        const availableSizes = colorToSizesMap.get(selectedColor) || new Set();
+        let sizeOptions = "";
 
-      uniqueSizes.forEach((size, index) => {
-        sizeOptions += `<option value="${size}">${size}</option>`;
-      });
-      document.querySelector("#product_size").innerHTML = sizeOptions;
+        availableSizes.forEach((size) => {
+          sizeOptions += `<option value="${size}">${size}</option>`;
+        });
 
-      // Function to update price based on selected size and color
-      const updatePrice = () => {
-        const selectedColorElement = document.querySelector('input[name="product_color"]:checked');
-        const selectedSizeElement = document.querySelector('#product_size');
-        
-        if (selectedColorElement && selectedSizeElement) {
-          const selectedColor = selectedColorElement.value;
-          const selectedSize = selectedSizeElement.value;
-          const selectedKey = `${selectedSize}-${selectedColor}`;
-          const selectedPrice = variationMap.get(selectedKey);
-          document.querySelector('#product_price').textContent = selectedPrice ? selectedPrice : product.basePrice;
-        } else {
-          document.querySelector('#product_price').textContent = product.basePrice;
-        }
+        document.querySelector("#product_size").innerHTML = sizeOptions;
       };
 
-      // Event listeners to update price when a color or size is selected
-      const colorRadios = document.querySelectorAll('input[name="product_color"]');
-      colorRadios.forEach((radio) => {
-        radio.addEventListener('change', updatePrice);
+      // Event listener for color selection
+      document.querySelectorAll('input[name="product_color"]').forEach((input) => {
+        input.addEventListener('change', (event) => {
+          const selectedColor = event.target.value;
+          updateSizeOptions(selectedColor);
+
+          // Update the price based on the first available size
+          const firstAvailableSize = Array.from(colorToSizesMap.get(selectedColor))[0];
+          const selectedKey = `${firstAvailableSize}-${selectedColor}`;
+          const selectedPrice = variationMap.get(selectedKey) || basePrice;
+          document.querySelector("#product_price").textContent = selectedPrice;
+
+          // Update size dropdown to reflect the first available size
+          const sizeSelect = document.querySelector("#product_size");
+          if (sizeSelect.options.length > 0) {
+            sizeSelect.value = firstAvailableSize; // Select the first size
+          }
+        });
       });
 
-      document.querySelector('#product_size').addEventListener('change', updatePrice);
+      // Event listener for size selection to update price
+      document.querySelector("#product_size").addEventListener('change', (event) => {
+        const selectedColor = document.querySelector('input[name="product_color"]:checked').value;
+        const selectedSize = event.target.value;
+        const selectedKey = `${selectedSize}-${selectedColor}`;
+        const selectedPrice = variationMap.get(selectedKey) || basePrice;
+        document.querySelector("#product_price").textContent = selectedPrice;
+      });
 
-      // Set initial price
-      updatePrice();
-    } else {
-      // No variations available, default to base price
-      document.querySelector('#product_price').textContent = product.basePrice;
+      // Initialize the size options based on the initially selected color
+      const initialColorElement = document.querySelector('input[name="product_color"]:checked');
+
+      if (initialColorElement) {
+        const initialColor = initialColorElement.value;
+        updateSizeOptions(initialColor);
+
+        // Optionally, update the price based on the first available size for the initially selected color
+        const firstAvailableSize = Array.from(colorToSizesMap.get(initialColor))[0];
+        const initialKey = `${firstAvailableSize}-${initialColor}`;
+        const initialPrice = variationMap.get(initialKey) || basePrice;
+        document.querySelector("#product_price").textContent = initialPrice;
+
+        // Set the first available size in the dropdown
+        document.querySelector("#product_size").value = firstAvailableSize;
+      } else {
+        document.querySelector("#product_price").textContent = basePrice;
+      }
+
+      // Initialize Swiper
+      var swiper = new Swiper(".mySwiperProduct", {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".product_slider-button-next",
+          prevEl: ".product_slider-button-prev",
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
     }
-
-    // Initialize Swiper
-    var swiper = new Swiper(".mySwiperProduct", {
-      loop: true,
-      spaceBetween: 10,
-      slidesPerView: 4,
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-    var swiper2 = new Swiper(".mySwiper2", {
-      loop: true,
-      spaceBetween: 10,
-      navigation: {
-        nextEl: ".product_slider-button-next",
-        prevEl: ".product_slider-button-prev",
-      },
-      thumbs: {
-        swiper: swiper,
-      },
-    });
-
   } catch (error) {
     console.error(error);
   }

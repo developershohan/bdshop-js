@@ -1,0 +1,195 @@
+Sure! Let’s go through the relevant sections of your code line by line and explain what each part does and why it’s important. Here’s the complete context for the `getSingleProduct` function, and I'll break it down step by step.
+
+### The Code Breakdown
+
+```javascript
+import { updateCart } from "./updateCart.js";
+```
+- **Explanation**: This line imports the `updateCart` function from another module. This is useful for updating the shopping cart whenever the product variations change.
+
+```javascript
+const getSingleProduct = async () => {
+```
+- **Explanation**: Here, we declare an asynchronous function named `getSingleProduct`. The `async` keyword indicates that this function will perform asynchronous operations, like fetching data from an API.
+
+```javascript
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get("id");
+```
+- **Explanation**: 
+  - `URLSearchParams` is used to parse the query string from the current URL. 
+  - `window.location.search` retrieves the part of the URL that comes after the `?` symbol.
+  - `urlParams.get("id")` extracts the value associated with the key `id` from the query string, which typically represents the product ID to fetch.
+
+```javascript
+try {
+```
+- **Explanation**: The `try` block is used to handle potential errors that may occur during the execution of the code within it. If an error occurs, control will move to the corresponding `catch` block.
+
+```javascript
+const res = await axios.get(
+  `https://backend-captain-api.vercel.app/api/v1/product/${productId}`
+);
+```
+- **Explanation**: 
+  - This line makes a GET request to an API endpoint using the `axios` library. 
+  - The `await` keyword pauses execution until the request completes, and the result is stored in the `res` variable.
+  - The API URL includes the `productId` to fetch the specific product data.
+
+```javascript
+const product = res.data;
+```
+- **Explanation**: This line extracts the product data from the response object returned by the API call. `res.data` contains the product details sent back from the server.
+
+```javascript
+const productImages = res.data.gallery;
+const productVariations = res.data.variations;
+```
+- **Explanation**: 
+  - These lines store the product's gallery images and variations into separate variables. 
+  - `productImages` will hold the URLs of the images, and `productVariations` will contain an array of available variations (sizes and colors).
+
+```javascript
+// Update product images
+let sliderImage = "";
+productImages.forEach((image) => {
+  sliderImage += `
+    <div class="swiper-slide">
+      <img src="${image.url}" />
+    </div>
+  `;
+});
+```
+- **Explanation**: 
+  - Here, we initialize a string variable `sliderImage` to accumulate HTML content.
+  - The `forEach` loop iterates over `productImages`, appending an HTML string for each image to `sliderImage`.
+  - Each image is wrapped in a `div` with a class of `swiper-slide`, which is likely used for a slider or carousel UI component.
+
+```javascript
+document.querySelector(".mySwiper2 .swiper-wrapper").innerHTML = sliderImage;
+document.querySelector(".mySwiperProduct .swiper-wrapper").innerHTML = sliderImage;
+```
+- **Explanation**: These lines update the inner HTML of the specified DOM elements with the generated `sliderImage` string. This effectively displays the product images in the UI.
+
+```javascript
+// Update product info
+let content1 = `
+  <h4>${product.category}</h4>
+  <h2 class="product_title text-[30px] font-bold capitalize">${product.name}</h2>
+  <p>${product.description}</p>
+  <h3 class="text-[22px] font-bold capitalize">$<span id="product_price">${product.basePrice}</span></h3>
+`;
+document.querySelector(".product_info").innerHTML = content1;
+```
+- **Explanation**: 
+  - Here, we create a string `content1` containing HTML elements to display the product's category, name, description, and base price.
+  - The `${product.category}`, `${product.name}`, `${product.description}`, and `${product.basePrice}` syntax is called template literals, allowing us to embed expressions within strings.
+  - Finally, we update the inner HTML of the `.product_info` element with this generated content.
+
+### Handling Variations
+
+```javascript
+if (productVariations && productVariations.length > 0) {
+```
+- **Explanation**: This line checks whether `productVariations` exists and has at least one variation. If true, it means the product has variations available for selection.
+
+```javascript
+const colorToSizesMap = new Map();
+const variationMap = new Map(); // Define the variationMap to store price for each size-color combination
+const basePrice = product.basePrice; // Assuming a base price
+```
+- **Explanation**: 
+  - `colorToSizesMap` is initialized as a `Map` to store available sizes for each color.
+  - `variationMap` is also initialized as a `Map` to store prices for each combination of size and color.
+  - `basePrice` is set to the product's base price for fallback in case no variations are selected.
+
+```javascript
+productVariations.forEach((variation) => {
+```
+- **Explanation**: This line begins a loop to iterate over each variation in `productVariations`.
+
+```javascript
+const { color, size, price } = variation;
+```
+- **Explanation**: This uses destructuring assignment to extract `color`, `size`, and `price` properties from the current `variation` object for easier access.
+
+```javascript
+if (!colorToSizesMap.has(color)) {
+  colorToSizesMap.set(color, new Set());
+}
+colorToSizesMap.get(color).add(size);
+```
+- **Explanation**:
+  - The first line checks if `colorToSizesMap` already has an entry for the current color.
+  - If not, it creates a new entry with the color as the key and initializes it with a new `Set` to store sizes.
+  - The second line adds the current size to the `Set` associated with the color, ensuring that only unique sizes are stored.
+
+```javascript
+const key = `${size}-${color}`;
+variationMap.set(key, price);
+```
+- **Explanation**: 
+  - A key is created by combining the `size` and `color` into a string format (e.g., "Medium-Brown").
+  - This key is then used to store the corresponding `price` in the `variationMap`. This allows for easy lookup of prices based on selected size and color combinations.
+
+### Generating Color Options
+
+```javascript
+let colorOptions = "";
+const uniqueColors = new Set(
+  productVariations.map((variation) => variation.color)
+);
+```
+- **Explanation**: 
+  - An empty string `colorOptions` is initialized to accumulate HTML for color radio buttons.
+  - `uniqueColors` is created using a `Set` to ensure only unique colors are captured from `productVariations`. The `map` function extracts the color from each variation.
+
+```javascript
+uniqueColors.forEach((color, index) => {
+  colorOptions += `
+    <label for="${color.toLowerCase()}" class="relative">
+      <input
+        type="radio"
+        name="product_color"
+        id="${color.toLowerCase()}"
+        value="${color}"
+        class="peer form-radio h-8 w-8 rounded-none border-none transition-all duration-150 hover:cursor-pointer lg:h-8 lg:w-8"
+        ${index === 0 ? "checked" : ""}
+        style="background-color: ${color.toLowerCase()};"
+      />
+      <span class="absolute -right-1 -top-1 hidden h-4 w-4 items-center justify-center bg-white peer-checked:inline-flex peer-checked:text-primary dark:bg-gray-900 dark:peer-checked:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-[10px] w-[10px]" fill="currentColor">
+          <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
+        </svg>
+      </span>
+    </label>
+  `;
+});
+```
+- **Explanation**: 
+  - This block generates radio button HTML for each unique color.
+  - The `forEach` loop builds a string with HTML markup for each color, setting the `value` attribute to the color name and using `color.toLowerCase()` for the ID and background color style.
+  - The first radio button is marked as `checked` to select it by default.
+
+```javascript
+document.querySelector(".colors_radio_variation").innerHTML = colorOptions;
+```
+- **Explanation**: This line updates the inner HTML of the `.colors_radio_variation` element with the generated color options.
+
+### Updating Size Options
+
+```javascript
+const updateSizeOptions = (selectedColor) => {
+  const availableSizes = colorToSizesMap.get(selectedColor) || new Set();
+  
+  let sizeOptions = "";
+  
+  availableSizes.forEach((size) => {
+    sizeOptions += `<option value="${size}">${size}</option>`;
+  });
+
+  document.querySelector("#product_size").innerHTML = sizeOptions;
+};
+```
+- **Explanation**: 
+  - `updateSizeOptions` is
