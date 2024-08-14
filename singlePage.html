@@ -111,7 +111,7 @@
               <a href="home" class="text-black"
                 >Home
                 <svg role="img" class="h-2 w-2 rotate-90 fill-black z-20">
-                  <use xlink:href="assets/img/yt1/sprite.svg#arrow-right"></use>
+                  <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
                 </svg>
               </a>
               <ul
@@ -204,7 +204,7 @@
             <div class="product_colors">
               <h2 class="text-[22px] font-bold capitalize">Select Color</h2>
               <div class="colors_radio_variation flex gap-2">
-                <label for="red" class="relative">
+                <!-- <label for="red" class="relative">
                   <input
                     type="radio"
                     name="red"
@@ -224,11 +224,15 @@
                   </span>
                 </label>
                 <label for="yellow">
-                  <input type="radio" name="yellow" id="" />
+                  <input
+                    type="radio"
+                    name="yellow"
+                    id=""
+                    class="peer form-radio h-8 w-8 rounded-none border-none transition-all duration-150 checked:bg-none hover:cursor-pointer lg:h-8 lg:w-8 text-[#cbcade] bg-[#cbcade] ring-[#cbcade]" />
                 </label>
                 <label for="blue">
                   <input type="radio" name="blue" id="" />
-                </label>
+                </label> -->
               </div>
             </div>
             <div class="product_size flex gap-2">
@@ -288,6 +292,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <script type="module" src="singleProduct.js"></script>
     <script type="module" src="main.js"></script>
   </body>
 </html>
