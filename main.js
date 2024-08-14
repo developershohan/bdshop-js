@@ -231,6 +231,26 @@ document.addEventListener("DOMContentLoaded", () => {
 //   });
 // });
 
+const getCartProductFromLS = () => {
+  let cartProducts = localStorage.getItem("cartProductsLS");
+  if (!cartProducts) {
+    return [];
+  }
+  cartProducts = JSON.parse(cartProducts);
+  return cartProducts;
+};
+
+const updateCart = () => {
+  let cartProducts = JSON.parse(localStorage.getItem("cartProductsLS") || "[]");
+  const cart_quantity = document.querySelector(".cart_quantity")
+  if (cartProducts.length > 0) {
+    cart_quantity.innerHTML = cartProducts.length
+    } else {
+    console.log(`0`);
+  }
+};
+
+updateCart();
 // get product from api
 
 const getProduct = async () => {
@@ -246,7 +266,7 @@ const getProduct = async () => {
       products.forEach((product, index) => {
         content += `
           <div
-            class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5" id = card${product._id}>
+            class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5" id = ${index}>
             <div class="product_img w-full relative overflow-hidden">
               <a href="./singlePage.html?id=${product._id}">
                 <img
@@ -255,7 +275,7 @@ const getProduct = async () => {
                   alt="" />
               </a>
               <div
-                class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0">
+                class="add_to_cart_icon absolute bg-red-600 flex justify-center items-center p-5 bottom-0 right-0" data-quantity="1">
                 <svg role="img" class="h-6 w-6 fill-white">
                   <use xlink:href="assets/img/sprite.svg#shopping-basket"></use>
                 </svg>
@@ -281,6 +301,23 @@ const getProduct = async () => {
         ".product_section .container"
       );
       product_container.innerHTML = content;
+
+      // add to cart
+      let lsProduct = getCartProductFromLS();
+      const add_to_cart_icon = document.querySelectorAll(".add_to_cart_icon");
+      add_to_cart_icon.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          const cardElement = e.target.closest(".card");
+          let id = cardElement.id;
+          let price = cardElement.querySelector(".sale_price").innerHTML;
+
+          
+          lsProduct.push({ id, price });
+          price = Number(price)
+          localStorage.setItem("cartProductsLS", JSON.stringify(lsProduct));
+          updateCart()
+        });
+      });
     }
 
     const uniqueCategories = new Set();
@@ -296,6 +333,7 @@ const getProduct = async () => {
     });
     const product_category = document.querySelector("#category_filter");
     product_category.innerHTML = content;
+    updateCart()
   } catch (error) {
     console.error(error);
   }
@@ -344,20 +382,17 @@ const getSingleproduct = async () => {
     `;
 
     document.querySelector(".product_info").innerHTML = content1;
-    
-    let content2 = ""
-    productVariations.forEach((variation,index)=>{
+
+    let content2 = "";
+    productVariations.forEach((variation, index) => {
       console.log(variation.size);
-      
-      content2 +=`
+
+      content2 += `
       <option value=" ${variation.size} ">${variation.size}</option>
       
-      `
-    })
+      `;
+    });
     document.querySelector("#product_size").innerHTML = content2;
-    
-
-    
 
     var swiper = new Swiper(".mySwiperProduct", {
       loop: true,
