@@ -1,3 +1,2 @@
 export const al = ()=>{
-    alert()
-}
+console.log("from dif");}

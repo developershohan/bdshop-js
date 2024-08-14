@@ -1,4 +1,4 @@
-import {al} from "./al.js"
+import { al } from "./al.js";
 // hamburger animation
 
 const open_btn = document.querySelector(".open_button");
@@ -243,10 +243,10 @@ const getCartProductFromLS = () => {
 
 const updateCart = () => {
   let cartProducts = JSON.parse(localStorage.getItem("cartProductsLS") || "[]");
-  const cart_quantity = document.querySelector(".cart_quantity")
+  const cart_quantity = document.querySelector(".cart_quantity");
   if (cartProducts.length > 0) {
-    cart_quantity.innerHTML = cartProducts.length
-    } else {
+    cart_quantity.innerHTML = cartProducts.length;
+  } else {
     console.log(`0`);
   }
 };
@@ -305,30 +305,41 @@ const getProduct = async () => {
       product_container.innerHTML = content;
 
       // add to cart
-      let lsProduct = getCartProductFromLS();
-      const add_to_cart_icon = document.querySelectorAll(".add_to_cart_icon");
-      add_to_cart_icon.forEach((button) => {
-        button.addEventListener("click", (e) => {
-          const cardElement = e.target.closest(".card");
-          let id = cardElement.id;
-          let price = cardElement.querySelector(".sale_price").innerHTML;
-          let quantity = cardElement.querySelector(".product_quantity").innerHTML;
-          quantity = Number(quantity)
-          price = Number(price * quantity)
-          const existingItemLs = lsProduct.find(item=> item.id ===id)
-          console.log(existingItemLs);
-          if (existingItemLs) {
-            quantity+1
-            price()
-          }
-          
+let lsProduct = getCartProductFromLS();
+const add_to_cart_icon = document.querySelectorAll(".add_to_cart_icon");
 
-          lsProduct.push({ id,quantity, price });
-          price = Number(price)
-          localStorage.setItem("cartProductsLS", JSON.stringify(lsProduct));
-          updateCart()
-        });
+add_to_cart_icon.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    const cardElement = e.target.closest(".card");
+    let id = cardElement.id;
+    let price = Number(cardElement.querySelector(".sale_price").innerHTML);
+    let quantity = Number(cardElement.querySelector(".product_quantity").innerHTML);
+
+    const existingItemLs = lsProduct.find((item) => item.id === id);
+
+    if (existingItemLs) {
+      // Update the quantity and price of the existing item
+      existingItemLs.quantity += quantity;
+      existingItemLs.price = Number(existingItemLs.quantity * price);
+
+      // Replace the existing item in the cart array
+      lsProduct = lsProduct.map((currentProduct) => {
+        if (currentProduct.id === id) {
+          return existingItemLs;
+        }
+        return currentProduct;
       });
+    } else {
+      // Add the new item to the cart
+      lsProduct.push({ id, quantity, price: Number(quantity * price) });
+    }
+
+    // Update local storage and the cart
+    localStorage.setItem("cartProductsLS", JSON.stringify(lsProduct));
+    updateCart();
+  });
+});
+
     }
 
     const uniqueCategories = new Set();
@@ -344,7 +355,7 @@ const getProduct = async () => {
     });
     const product_category = document.querySelector("#category_filter");
     product_category.innerHTML = content;
-    updateCart()
+    updateCart();
   } catch (error) {
     console.error(error);
   }
@@ -429,4 +440,4 @@ const getSingleproduct = async () => {
 };
 getSingleproduct();
 
-al()
+al();
