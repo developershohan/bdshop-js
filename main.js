@@ -1,3 +1,4 @@
+import {al} from "./al.js"
 // hamburger animation
 
 const open_btn = document.querySelector(".open_button");
@@ -288,6 +289,7 @@ const getProduct = async () => {
                 class="hover:text-red-500 text-[18px] font-bold">
                 ${product.name}</a
               >
+              <p data-item="1" class="product_quantity hidden">1</p>
               <p class="price font-bold text-[16px]">
                 $<span class="sale_price text-red-500 pr-1">${product.basePrice}</span>
                 <span class="regular_price line-through text-gray-400">$80</span>
@@ -310,9 +312,18 @@ const getProduct = async () => {
           const cardElement = e.target.closest(".card");
           let id = cardElement.id;
           let price = cardElement.querySelector(".sale_price").innerHTML;
-
+          let quantity = cardElement.querySelector(".product_quantity").innerHTML;
+          quantity = Number(quantity)
+          price = Number(price * quantity)
+          const existingItemLs = lsProduct.find(item=> item.id ===id)
+          console.log(existingItemLs);
+          if (existingItemLs) {
+            quantity+1
+            price()
+          }
           
-          lsProduct.push({ id, price });
+
+          lsProduct.push({ id,quantity, price });
           price = Number(price)
           localStorage.setItem("cartProductsLS", JSON.stringify(lsProduct));
           updateCart()
@@ -417,3 +428,5 @@ const getSingleproduct = async () => {
   }
 };
 getSingleproduct();
+
+al()
