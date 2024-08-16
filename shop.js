@@ -17,7 +17,7 @@ const getProduct = async () => {
       products.forEach((product, index) => {
         content += `
             <div
-              class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5" id = ${index}>
+              class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5" id = ${product._id}>
               <div class="product_img w-full relative overflow-hidden">
                 <a href="./singlePage.html?id=${product._id}">
                   <img

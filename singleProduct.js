@@ -1,3 +1,4 @@
+import { getCartProductFromLS } from "./getCartProductFromLS.js";
 import { updateCart } from "./updateCart.js";
 
 const getSingleProduct = async () => {
@@ -12,6 +13,8 @@ const getSingleProduct = async () => {
 
     const productImages = product.gallery;
     const productVariations = product.variations;
+    console.log(productVariations);
+    
 
     // Update product images
     let sliderImage = "";
@@ -22,8 +25,10 @@ const getSingleProduct = async () => {
         </div>
       `;
     });
-    document.querySelector(".mySwiper2 .swiper-wrapper").innerHTML = sliderImage;
-    document.querySelector(".mySwiperProduct .swiper-wrapper").innerHTML = sliderImage;
+    document.querySelector(".mySwiper2 .swiper-wrapper").innerHTML =
+      sliderImage;
+    document.querySelector(".mySwiperProduct .swiper-wrapper").innerHTML =
+      sliderImage;
 
     // Update product info
     let content1 = `
@@ -41,22 +46,29 @@ const getSingleProduct = async () => {
       const basePrice = product.basePrice;
 
       productVariations.forEach((variation) => {
-        const { color, size, price } = variation;
+        const { color, size, price, _id } = variation;
 
         // Populate colorToSizesMap
         if (!colorToSizesMap.has(color)) {
           colorToSizesMap.set(color, new Set());
         }
         colorToSizesMap.get(color).add(size);
+        
 
         // Populate variationMap
         const key = `${size}-${color}`;
-        variationMap.set(key, price);
+        
+        variationMap.set(key, price, _id);
+        console.log(variationMap);
+        
+
       });
 
       // Generate color radio buttons
       let colorOptions = "";
-      const uniqueColors = new Set(productVariations.map((variation) => variation.color));
+      const uniqueColors = new Set(
+        productVariations.map((variation) => variation.color)
+      );
 
       uniqueColors.forEach((color, index) => {
         colorOptions += `
@@ -80,7 +92,8 @@ const getSingleProduct = async () => {
         `;
       });
 
-      document.querySelector(".colors_radio_variation").innerHTML = colorOptions;
+      document.querySelector(".colors_radio_variation").innerHTML =
+        colorOptions;
 
       // Function to update size options based on selected color
       const updateSizeOptions = (selectedColor) => {
@@ -95,43 +108,56 @@ const getSingleProduct = async () => {
       };
 
       // Event listener for color selection
-      document.querySelectorAll('input[name="product_color"]').forEach((input) => {
-        input.addEventListener('change', (event) => {
-          const selectedColor = event.target.value;
-          updateSizeOptions(selectedColor);
+      document
+        .querySelectorAll('input[name="product_color"]')
+        .forEach((input) => {
+          input.addEventListener("change", (event) => {
+            const selectedColor = event.target.value;
+            updateSizeOptions(selectedColor);
 
-          // Update the price based on the first available size
-          const firstAvailableSize = Array.from(colorToSizesMap.get(selectedColor))[0];
-          const selectedKey = `${firstAvailableSize}-${selectedColor}`;
-          const selectedPrice = variationMap.get(selectedKey) || basePrice;
-          document.querySelector("#product_price").textContent = selectedPrice;
+            // Update the price based on the first available size
+            const firstAvailableSize = Array.from(
+              colorToSizesMap.get(selectedColor)
+            )[0];
+            const selectedKey = `${firstAvailableSize}-${selectedColor}`;
+            const selectedPrice = variationMap.get(selectedKey) || basePrice;
+            document.querySelector("#product_price").textContent =
+              selectedPrice;
 
-          // Update size dropdown to reflect the first available size
-          const sizeSelect = document.querySelector("#product_size");
-          if (sizeSelect.options.length > 0) {
-            sizeSelect.value = firstAvailableSize; // Select the first size
-          }
+            // Update size dropdown to reflect the first available size
+            const sizeSelect = document.querySelector("#product_size");
+            if (sizeSelect.options.length > 0) {
+              sizeSelect.value = firstAvailableSize; // Select the first size
+            }
+          });
         });
-      });
 
       // Event listener for size selection to update price
-      document.querySelector("#product_size").addEventListener('change', (event) => {
-        const selectedColor = document.querySelector('input[name="product_color"]:checked').value;
-        const selectedSize = event.target.value;
-        const selectedKey = `${selectedSize}-${selectedColor}`;
-        const selectedPrice = variationMap.get(selectedKey) || basePrice;
-        document.querySelector("#product_price").textContent = selectedPrice;
-      });
+      document
+        .querySelector("#product_size")
+        .addEventListener("change", (event) => {
+          const selectedColor = document.querySelector(
+            'input[name="product_color"]:checked'
+          ).value;
+          const selectedSize = event.target.value;
+          const selectedKey = `${selectedSize}-${selectedColor}`;
+          const selectedPrice = variationMap.get(selectedKey) || basePrice;
+          document.querySelector("#product_price").textContent = selectedPrice;
+        });
 
       // Initialize the size options based on the initially selected color
-      const initialColorElement = document.querySelector('input[name="product_color"]:checked');
+      const initialColorElement = document.querySelector(
+        'input[name="product_color"]:checked'
+      );
 
       if (initialColorElement) {
         const initialColor = initialColorElement.value;
         updateSizeOptions(initialColor);
 
         // Optionally, update the price based on the first available size for the initially selected color
-        const firstAvailableSize = Array.from(colorToSizesMap.get(initialColor))[0];
+        const firstAvailableSize = Array.from(
+          colorToSizesMap.get(initialColor)
+        )[0];
         const initialKey = `${firstAvailableSize}-${initialColor}`;
         const initialPrice = variationMap.get(initialKey) || basePrice;
         document.querySelector("#product_price").textContent = initialPrice;
@@ -141,6 +167,35 @@ const getSingleProduct = async () => {
       } else {
         document.querySelector("#product_price").textContent = basePrice;
       }
+
+      // add to cart
+      const single_product_cart_btn = document.querySelector(
+        "#single_product_cart_btn"
+      );
+
+      single_product_cart_btn.addEventListener("click", () => {
+        let lsProduct = getCartProductFromLS();
+        const id = product._id;
+      
+        let price = Number(document.querySelector("#product_price").textContent);
+        let quantity = Number(document.querySelector("input[name='quality']").value);
+      
+        const existingItemLs = lsProduct.find((item) => item.id === id);
+      
+        if (existingItemLs) {
+          // Update the quantity and price of the existing item
+          existingItemLs.quantity += quantity; // Update the quantity
+          existingItemLs.price = Number(existingItemLs.quantity * price); // Recalculate the total price based on the updated quantity
+        } else {
+          // Add the new item to the cart
+          lsProduct.push({ id, quantity, price: Number(quantity * price) });
+        }
+      
+        // Update local storage and the cart
+        localStorage.setItem("cartProductsLS", JSON.stringify(lsProduct));
+        updateCart();
+      });
+      
 
       // Initialize Swiper
       var swiper = new Swiper(".mySwiperProduct", {

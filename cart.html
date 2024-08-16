@@ -158,7 +158,7 @@
     <section class="cart_section flex justify-center py-20">
       <div class="container flex flex-wrap justify-between gap-8">
         <div class="cart_update_container w-[60%]" >
-          <h2 class=" text-[40px] font-bold pb-10 "><span class="text-red-500">3</span> Products in the cart</h2>
+          <h2 class=" text-[40px] font-bold pb-10 "><span class="cart_quantity text-red-500" >0</span> Products in the cart</h2>
           <div class="cart_update_table w-full">
             <table class="w-full ">
               <thead class="mb-4">
@@ -170,79 +170,7 @@
                   <th class=" py-4"></th>
                 </tr>
               </thead>
-              <tbody class=" text-center">
-
-
-                <tr >
-                  <td class="py-4">
-                    <div class="cart_product flex gap-4">
-                      <img src="assets/img/samples/product-1-50x50.jpg" alt="">
-                      <div class="cart_product_details">
-                        <div class="category text-left">
-                          <h3 class=" font-bold text-gray-400">Clothing</h3>
-                          <h2 class=" font-bold text-gray-800 text-[18px]">Product1</h2>
-                          <div class="ratings">
-                            3
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="py-4"> <input type="number" name="quantity" id="" value="1" class="w-14"></td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="  text-black  ">
-                    <p class=" cursor-pointer text-[18px]">x</p>
-                  </td>
-                </tr>
-
-                <tr >
-                  <td class="py-4">
-                    <div class="cart_product flex gap-4">
-                      <img src="assets/img/samples/product-1-50x50.jpg" alt="">
-                      <div class="cart_product_details">
-                        <div class="category text-left">
-                          <h3 class=" font-bold text-gray-400">Clothing</h3>
-                          <h2 class=" font-bold text-gray-800 text-[18px]">Product1</h2>
-                          <div class="ratings">
-                            3
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="py-4"> <input type="number" name="quantity" id="" value="1" class="w-14"></td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="  text-black  ">
-                    <p class=" cursor-pointer text-[18px]">x</p>
-                  </td>
-                </tr>
-
-                <tr >
-                  <td class="py-4">
-                    <div class="cart_product flex gap-4">
-                      <img src="assets/img/samples/product-1-50x50.jpg" alt="">
-                      <div class="cart_product_details">
-                        <div class="category text-left">
-                          <h3 class=" font-bold text-gray-400">Clothing</h3>
-                          <h2 class=" font-bold text-gray-800 text-[18px]">Product1</h2>
-                          <div class="ratings">
-                            3
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="py-4"> <input type="number" name="quantity" id="" value="1" class="w-14"></td>
-                  <td class="py-4"> $<span>25</span></td>
-                  <td class="  text-black  ">
-                    <p class=" cursor-pointer text-[18px]">x</p>
-                  </td>
-                </tr>
-
-
+              <tbody class=" text-center" id="cart_items">
 
               </tbody>
             </table>
