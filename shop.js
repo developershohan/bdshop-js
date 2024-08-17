@@ -2,8 +2,8 @@ import { getCartProductFromLS } from "./getCartProductFromLS.js";
 import { updateCart } from "./updateCart.js";
 
 updateCart();
-// get product from api
 
+// get product from api
 const getProduct = async () => {
   try {
     const res = await axios.get(
@@ -14,10 +14,17 @@ const getProduct = async () => {
     let content = "";
 
     if (products.length > 0) {
-      products.forEach((product, index) => {
+      products.forEach((product) => {
+        let startFrom;
+
+        if (product.variations && product.variations.length > 0) {
+          // Calculate the minimum price from the variations
+          startFrom = Math.min(...product.variations.map(v => v.price));
+        }
+
         content += `
             <div
-              class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5" id = ${product._id}>
+              class="card lg:w-[31%] md:w-[47%] w-full flex flex-col justify-center items-center text-center gap-5" id="${product._id}">
               <div class="product_img w-full relative overflow-hidden">
                 <a href="./singlePage.html?id=${product._id}">
                   <img
@@ -41,7 +48,10 @@ const getProduct = async () => {
                 >
                 <p data-item="1" class="product_quantity hidden">1</p>
                 <p class="price font-bold text-[16px]">
-                  $<span class="sale_price text-red-500 pr-1">${product.basePrice}</span>
+
+                ${ product.basePrice === null && startFrom !== undefined ? `start From` : `$` }
+
+                  <span class="sale_price text-red-500 pr-1">${ product.basePrice === null && startFrom !== undefined ? startFrom : product.basePrice }</span>
                   <span class="regular_price line-through text-gray-400">$80</span>
                 </p>
               </div>
@@ -49,6 +59,7 @@ const getProduct = async () => {
           
           `;
       });
+
       const product_container = document.querySelector(
         ".product_section .container"
       );
@@ -103,8 +114,9 @@ const getProduct = async () => {
       uniqueCategories.add(product.category);
     });
 
+    let categoryOptions = "";
     uniqueCategories.forEach((category) => {
-      content += `
+      categoryOptions += `
                 <option value="${category}">${category}</option>
     
     `;
@@ -112,7 +124,7 @@ const getProduct = async () => {
     const product_category = document.querySelector("#category_filter");
 
     if (product_category) {
-      product_category.innerHTML = content;
+      product_category.innerHTML = categoryOptions;
     }
     updateCart();
   } catch (error) {
@@ -120,4 +132,3 @@ const getProduct = async () => {
   }
 };
 getProduct();
-// single product details
